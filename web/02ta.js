@@ -14,6 +14,6 @@ function changeColor() {
 $document.ready(function(){
     "use strict";
     $("#cbutton").click(function(){
-        $("#div1").css("background-color", $("#change").val();
+        $("#div1").css("background-color", $("#change").val());
     });
 });
