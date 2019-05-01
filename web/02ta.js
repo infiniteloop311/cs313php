@@ -11,7 +11,7 @@ function changeColor() {
     document.getElementById("div1").style.backgroundColor = color;
 }
 
-$document.ready(function(){
+$(document).ready(function(){
     "use strict";
     $("#cbutton").click(function(){
         $("#div1").css("background-color", $("#change").val());
