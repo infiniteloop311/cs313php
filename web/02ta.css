@@ -1,3 +1,40 @@
-body {
+h1 {
     font-family: monospace;
+}
+
+#div1 {
+    font-family: cursive;
+    background-color: darkblue;
+    color: aliceblue;
+}
+
+#div1:hover {
+    font-family: cursive;
+    background-color: darkblue;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+#div2 {
+    font-family: fantasy;
+    background-color: forestgreen;
+}
+
+#div2:hover {
+    font-family: fantasy;
+    background-color: forestgreen;
+    font-weight: bold;
+}
+
+#div3 {
+    font-family: sans-serif;
+    background-color: firebrick;
+    color: antiquewhite;
+}
+
+#div3:hover {
+    font-family: sans-serif;
+    background-color: firebrick;
+    color: antiquewhite;
+    font-weight: bold;
 }
