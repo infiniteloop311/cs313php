@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Home Page</h1>
+    <?php echo date("D M d, Y G:i a"); ?>
     <a href="assignments.php">Assignments</a>
 </body>
 </html>

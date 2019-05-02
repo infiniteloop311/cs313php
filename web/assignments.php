@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>Assignments</h1>
+    <p>Assignment links coming soon.</p>
 </body>
 </html>
