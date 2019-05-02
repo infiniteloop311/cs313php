@@ -17,3 +17,9 @@ $(document).ready(function(){
         $("#div1").css("background-color", $("#change").val());
     });
 });
+
+$(document).ready(function(){
+    $("#fbutton").click(function(){
+        $("#div3").toggle("slow");
+    });
+});

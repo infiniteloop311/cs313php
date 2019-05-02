@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>02-Team Activity</title>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="02ta.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="02ta.js"></script>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
 </head>
 <body>
     <h1>02 - Team Activity</h1>
     <span>Change color of first div: </span>
     <input type="text" id="change" value="">
-    <button id="cbutton">Change Color</button>
-    <div id="div1">This is div 1.</div>
-    <div id="div2">This is div 2.</div>
-    <div id="div3">This is div 3.</div>
+    <button id="cbutton">Change Color of Div 1</button>
+    <div id="div1" class="container-fluid">This is div 1.</div>
+    <div id="div2" class="container-fluid">This is div 2.</div>
+    <div id="div3" class="container-fluid">This is div 3.</div>
+    <button id="fbutton">Fade Div 3</button>
+    <br/>
     <button onclick="buttonIsClicked()">Click Me!</button>
 </body>
 </html>
