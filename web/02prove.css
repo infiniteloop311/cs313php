@@ -9,7 +9,7 @@ h1 {
     text-align: center;
 }
 
-p {
+p, a {
     font-family: 'Nanum Gothic Coding', monospace;
 }
 
