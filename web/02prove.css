@@ -1,3 +1,7 @@
+body {
+    background-image: url("02background.jpg");
+}
+
 h1 {
     font-family: monospace;
     text-align: center;
