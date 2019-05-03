@@ -1,2 +1,3 @@
 This is a text file that I am reading via php.
-I am reading it line by line.
+It is being read line by line.
+Reading files in php is not too hard.
