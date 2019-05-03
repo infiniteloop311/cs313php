@@ -1,6 +1,6 @@
 /*jslint devel: true */
 $(document).ready(function(){
-    $("#button").click(function(){
+    $("#tbutton").click(function(){
         $("#quotes").toggle("slow");
     });
 });

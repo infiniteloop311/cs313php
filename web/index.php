@@ -23,7 +23,7 @@
         </p>
     </div>
     <div id="quotes">
-        <button id="button">Click here for some inspirational quotes!</button>
+        <button id="tbutton">Click here for some inspirational quotes!</button>
         <p>
             "I am a slow walker, but I never walk back." - Abraham Lincoln
         </p>
