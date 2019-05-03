@@ -7,8 +7,10 @@
     <link rel="stylesheet" type="text/css" href="02prove.css">
 </head>
 <body>
-    <h1>Assignments</h1>
-    <a href="index.php">Home Page</a>
+    <div id="header">
+        <h1>Assignments</h1>
+        <a href="index.php">Home Page</a>
+    </div>
     <p>Assignment links coming soon.</p>
 </body>
 </html>

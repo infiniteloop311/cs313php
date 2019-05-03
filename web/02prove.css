@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding');
 body {
     background-color: dimgray;
     color: white;
@@ -8,7 +9,11 @@ h1 {
     text-align: center;
 }
 
-a {
+p {
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+#header {
     text-align: center;
 }
 
