@@ -9,7 +9,7 @@
 <body>
     <h1>My Home Page</h1>
     <a href="assignments.php">Assignments</a>
-    <img src="02banner.jpg" alt="Scenery banner">
+    <img src="02banner.jpg" alt="Scenery banner" id="banner">
     <p>
         My name is Jay Fagerburg and I am a Computer Engineering major. I am from Columbia, South Carolina. I enjoy reading, listening to music, video games, soccer, and playing the piano. 
     </p>
