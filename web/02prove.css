@@ -1,10 +1,13 @@
 body {
-    background-image: url("02background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: dimgray;
+    color: white;
 }
 
 h1 {
     font-family: monospace;
+    text-align: center;
+}
+
+a {
     text-align: center;
 }

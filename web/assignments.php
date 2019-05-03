@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Assignments</h1>
+    <a href="index.php">Home Page</a>
     <p>Assignment links coming soon.</p>
 </body>
 </html>
