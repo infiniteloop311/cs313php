@@ -23,7 +23,7 @@
             I took Web Engineering I last semester because I wanted to get some experience with web development and as it turns out I really enjoyed it. Since I don't have a lot of space my last semester, I'm taking this class now so that I can delve deeper into web development server side programming. I'm hoping that it'll be as fun as the prerequisite class and that I'll learn a lot. 
         </p>
     </div>
-    <button id="tbutton">Click here for some inspirational quotes!</button>
+    <button id="tbutton">Click here for some inspirational quotes!</button><br/>
     <div id="quotes">
         <q>
             I am a slow walker, but I never walk back. - Abraham Lincoln
@@ -38,6 +38,17 @@
         </q>
     </div>
     <br/><br/>
-    <?php echo date("D M d, Y G:i a"); ?>
+    <?php 
+    $file = fopen("test.txt","r");
+    
+    while(! feof($file))
+    {
+        echo fgets($file). "<br/>";
+    }
+    
+    fclose($file);
+    
+    echo date("D M d, Y G:i a"); 
+    ?>
 </body>
 </html>
