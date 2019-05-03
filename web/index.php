@@ -39,7 +39,7 @@
     </div>
     <br/><br/>
     <?php 
-    $file = fopen("test.txt","r");
+    $file = fopen("02prove.txt","r");
     
     while(! feof($file))
     {
