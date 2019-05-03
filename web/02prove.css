@@ -25,3 +25,7 @@ p, a {
     width: 10%;
     float: right;
 }
+
+#quotes {
+    visibility: hidden;
+}
