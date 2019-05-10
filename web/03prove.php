@@ -9,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <button onclick="<?php echo "Clicked!"?>">Add session variable.</button>
+    <button onclick="<?php echo 'Clicked!'?>">Add session variable.</button><br/>
     <?php
     $_SESSION["favcolor"] = "green";
     $_SESSION["favanimal"] = "cat";
