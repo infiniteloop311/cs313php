@@ -14,7 +14,7 @@ session_start();
     if (isset($_GET['item1'])) {
         $_SESSION["item"] = "bought";
     }
-    //print_r($_SESSION);
+    print_r($_SESSION);
     ?>
 </body>
 </html>
