@@ -11,8 +11,10 @@ session_start();
 <body>
     <button onclick="<?php echo "Clicked!"?>">Add session variable.</button>
     <?php
-    
+    $_SESSION["favcolor"] = "green";
+    $_SESSION["favanimal"] = "cat";
+    echo "Favorite color is " . $_SESSION["favcolor"] . ".<br>";
+    echo "Favorite animal is " . $_SESSION["favanimal"] . ".";
     ?>
-    <button></button>
 </body>
 </html>
