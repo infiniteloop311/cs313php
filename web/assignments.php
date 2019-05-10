@@ -12,7 +12,7 @@
         <a href="index.php">Home Page</a>
     </div>
     <div>
-        <a href="03prove.php">03 Prove - Shopping Cart</a>
+        <a href="03proveBrowse.php">03 Prove - Shopping Cart</a>
     </div>
 </body>
 </html>
