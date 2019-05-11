@@ -8,3 +8,9 @@ body {
     text-align: center;
     font-family: 'Slabo 27px', serif;
 }
+
+#main {
+    background-color: white;
+    text-align: left;
+    font-family: 'Slabo 27px', serif;
+}
