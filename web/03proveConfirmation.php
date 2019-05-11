@@ -9,18 +9,20 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <h1>Purchase Confirmed</h1>
-    <?php
-    foreach ($_SESSION as $itemName => $quantity) {
-        echo $itemName . " -> " . $quantity . "<br/><br/>";
-    }
-    
-    echo "Your items will be shipped to: <br/>";
-    echo htmlspecialchars($_POST["Street"]) . "<br/>" . 
-        htmlspecialchars($_POST["City"]) . ", " . htmlspecialchars($_POST["State"]) . 
-        " " . htmlspecialchars($_POST["Zipcode"]) . 
-        "<br/><br/>";
-    ?>
-    <p>Thank you for your purchase!</p>
+    <div id="main">
+        <h1>Purchase Confirmed</h1>
+        <?php
+        foreach ($_SESSION as $itemName => $quantity) {
+            echo $itemName . " -> " . $quantity . "<br/><br/>";
+        }
+
+        echo "Your items will be shipped to: <br/>";
+        echo htmlspecialchars($_POST["Street"]) . "<br/>" . 
+            htmlspecialchars($_POST["City"]) . ", " . htmlspecialchars($_POST["State"]) . 
+            " " . htmlspecialchars($_POST["Zipcode"]) . 
+            "<br/><br/>";
+        ?>
+        <p>Thank you for your purchase!</p>
+    </div>
 </body>
 </html>
