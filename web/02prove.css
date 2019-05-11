@@ -13,7 +13,7 @@ p, a, q {
     font-family: 'Nanum Gothic Coding', monospace;
 }
 
-#header {
+#header, #assignments {
     text-align: center;
 }
 

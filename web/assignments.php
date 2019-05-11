@@ -11,7 +11,8 @@
         <h1>Assignments</h1>
         <a href="index.php">Home Page</a>
     </div>
-    <div>
+    <br/>
+    <div id="assignments">
         <a href="03proveBrowse.php">03 Prove - Shopping Cart</a>
     </div>
 </body>

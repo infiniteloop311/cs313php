@@ -9,6 +9,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+    <h1>View Cart</h1>
+    <br/>
+    <br/>
     <?php
     if (isset($_GET['item1'])) {
         unset($_SESSION["item1"]);
@@ -23,16 +26,13 @@ session_start();
         unset($_SESSION["item4"]);
     }
     
-    foreach ($_SESSION as $item => $quantity) {
-        echo $item . " -> " . $quantity . "<br/>" . 
-            "<a href=\"03proveCart.php?" . $item . "=removed\">Remove " . $item . " from Cart</a><br/>";
+    foreach ($_SESSION as $itemName => $quantity) {
+        echo $itemName . " -> " . $quantity . "<br/>" . 
+            "<a href=\"03proveCart.php?" . $itemName . "=removed\">Remove " . 
+            $itemName . " from Cart</a><br/>";
     }
     ?>
     <br/>
-    <a href="03proveCart.php?item1=removed">Remove Item 1 from Cart</a><br/>
-    <a href="03proveCart.php?item2=removed">Remove Item 2 from Cart</a><br/>
-    <a href="03proveCart.php?item3=removed">Remove Item 3 from Cart</a><br/>
-    <a href="03proveCart.php?item4=removed">Remove Item 4 from Cart</a><br/>
     <br/>
     <a href="03proveBrowse.php">Back to Browsing</a><br/>
     <a href="03proveCheckout.php">Checkout</a><br/>
