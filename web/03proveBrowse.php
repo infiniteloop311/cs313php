@@ -10,7 +10,7 @@ session_start();
 </head>
 <body>
     <h1>Browse Items</h1>
-    <img src="milanjersey.jpg" alt="Milan Jersey" width="30%"><br/>
+    <img src="milanjersey.jpg" alt="Milan Jersey" width="10%"><br/>
     <a href="03proveBrowse.php?item1=bought">Add to Cart</a><br/>
     
     <img src="romajersey.jpg" alt="Roma Jersey"><br/>
