@@ -23,12 +23,15 @@ session_start();
         unset($_SESSION["item4"]);
     }
     print_r($_SESSION);
+    foreach ($_SESSION as $key => $value) {
+        echo $key . " " . $value . "<br/>";
+    }
     ?>
     <br/>
-    <a href="03proveCart.php?item1=removed">Remove Item 1</a><br/>
-    <a href="03proveCart.php?item2=removed">Item 2</a><br/>
-    <a href="03proveCart.php?item3=removed">Item 3</a><br/>
-    <a href="03proveCart.php?item4=removed">Item 4</a><br/>
+    <a href="03proveCart.php?item1=removed">Remove Item 1 from Cart</a><br/>
+    <a href="03proveCart.php?item2=removed">Remove Item 2 from Cart</a><br/>
+    <a href="03proveCart.php?item3=removed">Remove Item 3 from Cart</a><br/>
+    <a href="03proveCart.php?item4=removed">Remove Item 4 from Cart</a><br/>
     <br/>
     <a href="03proveBrowse.php">Back to Browsing</a><br/>
     <a href="03proveCheckout.php">Checkout</a><br/>
