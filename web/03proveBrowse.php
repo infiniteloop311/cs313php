@@ -28,5 +28,7 @@ session_start();
     }
     print_r($_SESSION);
     ?>
+    <br/>
+    <a href="03proveCart.php">View Cart</a>
 </body>
 </html>
