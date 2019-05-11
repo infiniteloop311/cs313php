@@ -14,14 +14,14 @@ session_start();
     if (isset($_GET['AC_Milan_Home_Jersey'])) {
         unset($_SESSION["AC_Milan_Home_Jersey"]);
     }
-    if (isset($_GET['item2'])) {
-        unset($_SESSION["item2"]);
+    if (isset($_GET['AS_Roma_Home_Jersey'])) {
+        unset($_SESSION["AS_Roma_Home_Jersey"]);
     }
-    if (isset($_GET['item3'])) {
-        unset($_SESSION["item3"]);
+    if (isset($_GET['Inter_Milan_Home_Jersey'])) {
+        unset($_SESSION["Inter_Milan_Home_Jersey"]);
     }
-    if (isset($_GET['item4'])) {
-        unset($_SESSION["item4"]);
+    if (isset($_GET['Lazio_Home_Jersey'])) {
+        unset($_SESSION["Lazio_Home_Jersey"]);
     }
     
     foreach ($_SESSION as $itemName => $quantity) {
