@@ -14,7 +14,7 @@ session_start();
         <h1>Purchase Confirmed</h1>
         <?php
         foreach ($_SESSION as $itemName => $quantity) {
-            echo $itemName . " -> " . $quantity . "<br/><br/>";
+            echo $itemName . " - Qty. " . $quantity . "<br/><br/>";
         }
 
         echo "Your items will be shipped to: <br/>";

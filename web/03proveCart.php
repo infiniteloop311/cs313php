@@ -27,7 +27,7 @@ session_start();
         }
 
         foreach ($_SESSION as $itemName => $quantity) {
-            echo $itemName . " -> " . $quantity . "<br/>" . 
+            echo $itemName . " - Qty. " . $quantity . "<br/>" . 
                 "<a href=\"03proveCart.php?" . $itemName . "=removed\">Remove " . 
                 $itemName . " from Cart</a><br/><br/>";
         }

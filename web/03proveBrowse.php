@@ -27,19 +27,19 @@ session_start();
     <div id="main">
         <h1>Browse Items</h1>
         <img src="milanjersey.jpg" alt="Milan Jersey" width="20%"><br/>
-        <span>AC Milan Home Jersey</span>
+        <span>AC Milan Home Jersey</span><br/>
         <a href="03proveBrowse.php?item1=bought">Add to Cart</a><br/><br/>
 
         <img src="romajersey.jpg" alt="Roma Jersey" width="20%"><br/>
-        <span>AS Roma Home Jersey</span>
+        <span>AS Roma Home Jersey</span><br/>
         <a href="03proveBrowse.php?item2=bought">Add to Cart</a><br/><br/>
 
         <img src="interjersey.jpg" alt="Inter Jersey" width="20%"><br/>
-        <span>Inter Milan Home Jersey</span>
+        <span>Inter Milan Home Jersey</span><br/>
         <a href="03proveBrowse.php?item3=bought">Add to Cart</a><br/><br/>
 
         <img src="laziojersey.jpg" alt="Lazio Jersey" width="20%"><br/>
-        <span>Lazio Home Jersey</span>
+        <span>Lazio Home Jersey</span><br/>
         <a href="03proveBrowse.php?item4=bought">Add to Cart</a><br/><br/>
 
         <br/>
