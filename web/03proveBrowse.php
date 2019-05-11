@@ -26,7 +26,6 @@ session_start();
     if (isset($_GET['item4'])) {
         $_SESSION["item4"] = "1";
     }
-    print_r($_SESSION);
     ?>
     <br/>
     <a href="03proveCart.php">View Cart</a>
