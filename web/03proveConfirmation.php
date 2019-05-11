@@ -12,12 +12,13 @@ session_start();
     <h1>Purchase Confirmed</h1>
     <?php
     foreach ($_SESSION as $itemName => $quantity) {
-        echo $itemName . " -> " . $quantity . "<br/>";
+        echo $itemName . " -> " . $quantity . "<br/><br/>";
     }
     
     echo "Your items will be shipped to: <br/>";
-    echo $_POST["Street"] . "<br/>" . 
-        $_POST["City"] . ", " . $_POST["State"] . " " . $_POST["Zipcode"] . 
+    echo htmlspecialchars($_POST["Street"]) . "<br/>" . 
+        htmlspecialchars($_POST["City"]) . ", " . htmlspecialchars($_POST["State"]) . 
+        " " . htmlspecialchars($_POST["Zipcode"]) . 
         "<br/><br/>";
     ?>
     <p>Thank you for your purchase!</p>
