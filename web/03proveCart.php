@@ -10,8 +10,6 @@ session_start();
 </head>
 <body>
     <h1>View Cart</h1>
-    <br/>
-    <br/>
     <?php
     if (isset($_GET['item1'])) {
         unset($_SESSION["item1"]);
@@ -29,7 +27,7 @@ session_start();
     foreach ($_SESSION as $itemName => $quantity) {
         echo $itemName . " -> " . $quantity . "<br/>" . 
             "<a href=\"03proveCart.php?" . $itemName . "=removed\">Remove " . 
-            $itemName . " from Cart</a><br/>";
+            $itemName . " from Cart</a><br/><br/>";
     }
     ?>
     <br/>

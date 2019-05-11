@@ -10,6 +10,12 @@ session_start();
 </head>
 <body>
     <h1>Purchase Confirmed</h1>
+    <?php
+    echo "Your items will be shipped to: <br/>"
+    echo $_POST["Street"] . "<br/>" . 
+        $_POST["City"] . ", " . $_POST["State"] . " " . $_POST["Zipcode"] . 
+        "<br/><br/>";
+    ?>
     <p>Thank you for your purchase!</p>
 </body>
 </html>

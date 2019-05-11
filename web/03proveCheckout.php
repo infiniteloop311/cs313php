@@ -16,14 +16,13 @@ session_start();
         <span>City: </span>
         <input type="text" name="City"><br/>
         <span>State: </span>
-        <input type="text" name="State"><br/>
+        <input type="text" name="State" maxlength="2" size="2"><br/>
         <span>Zipcode: </span>
-        <input type="text" name="Zipcode"><br/>
-        <input type="submit" value="Submit">
+        <input type="text" name="Zipcode" maxlength="5" size="5"><br/>
+        <input type="submit" value="Confirm Purchase">
     </form>
     <br/>
     <br/>
     <a href="03proveCart.php">Back To Cart</a>
-    <a href="03proveConfirmation.php">Confirm Purchase</a>
 </body>
 </html>
