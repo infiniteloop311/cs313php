@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 body {
     background-color: midnightblue;
 }
 
 #main {
+    background-color: white;
     text-align: center;
+    font-family: 'Slabo 27px', serif;
 }
