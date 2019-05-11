@@ -4,13 +4,15 @@ body {
 }
 
 #main {
-    background-color: white;
+    background-color: darkgray;
     text-align: center;
     font-family: 'Slabo 27px', serif;
+    margin: 0px 200px;
+    padding: 15px;
 }
 
-#main {
-    background-color: white;
+#main2 {
+    background-color: darkgray;
     text-align: left;
     font-family: 'Slabo 27px', serif;
 }
