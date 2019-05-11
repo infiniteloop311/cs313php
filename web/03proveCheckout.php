@@ -21,6 +21,7 @@ session_start();
             <input type="text" name="State" maxlength="2" size="2"><br/>
             <span>Zipcode: </span>
             <input type="text" name="Zipcode" maxlength="5" size="5"><br/>
+            <br/>
             <input type="submit" value="Confirm Purchase">
         </form>
         <br/>
