@@ -20,3 +20,13 @@ body {
     padding: 10px;
     border-radius: 10px;
 }
+
+input {
+    width: 100%;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    border-radius: 5px;
+}
