@@ -15,16 +15,16 @@ session_start();
     <a href="03proveBrowse.php?item4=bought">Add Item 4 to Cart</a><br/>
     <?php
     if (isset($_GET['item1'])) {
-        $_SESSION["item1"] = "bought";
+        $_SESSION["item1"] = "1";
     }
     if (isset($_GET['item2'])) {
-        $_SESSION["item2"] = "bought";
+        $_SESSION["item2"] = "1";
     }
     if (isset($_GET['item3'])) {
-        $_SESSION["item3"] = "bought";
+        $_SESSION["item3"] = "1";
     }
     if (isset($_GET['item4'])) {
-        $_SESSION["item4"] = "bought";
+        $_SESSION["item4"] = "1";
     }
     print_r($_SESSION);
     ?>

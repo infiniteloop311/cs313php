@@ -22,9 +22,10 @@ session_start();
     if (isset($_GET['item4'])) {
         unset($_SESSION["item4"]);
     }
-    print_r($_SESSION);
-    foreach ($_SESSION as $key => $value) {
-        echo $key . " " . $value . "<br/>";
+    
+    foreach ($_SESSION as $item => $quantity) {
+        echo $item . " -> " . $quantity . "<br/>" . 
+            "<a href=\"03proveCart.php?item1=removed\">Remove Item 1 from Cart</a><br/>";
     }
     ?>
     <br/>
