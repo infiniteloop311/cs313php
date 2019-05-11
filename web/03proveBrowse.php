@@ -12,15 +12,19 @@ session_start();
     <h1>Browse Items</h1>
     <img src="milanjersey.jpg" alt="Milan Jersey"><br/>
     <a href="03proveBrowse.php?item1=bought">Add to Cart</a><br/>
+    
     <img src="romajersey.jpg" alt="Roma Jersey"><br/>
     <a href="03proveBrowse.php?item2=bought">Add to Cart</a><br/>
+    
     <img src="interjersey.jpg" alt="Inter Jersey"><br/>
     <a href="03proveBrowse.php?item3=bought">Add to Cart</a><br/>
+    
     <img src="laziojersey.jpg" alt="Lazio Jersey"><br/>
     <a href="03proveBrowse.php?item4=bought">Add to Cart</a><br/>
+    
     <?php
     if (isset($_GET['item1'])) {
-        $_SESSION["AC Milan Home Jersey"] = "1";
+        $_SESSION["AC_Milan_Home_Jersey"] = "1";
     }
     if (isset($_GET['item2'])) {
         $_SESSION["item2"] = "1";
