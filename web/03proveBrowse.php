@@ -7,6 +7,7 @@ session_start();
     <title>Browse Items</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="03prove.css">
 </head>
 <body>
     <?php
