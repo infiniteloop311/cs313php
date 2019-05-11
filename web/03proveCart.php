@@ -11,8 +11,8 @@ session_start();
 <body>
     <h1>View Cart</h1>
     <?php
-    if (isset($_GET['item1'])) {
-        unset($_SESSION["item1"]);
+    if (isset($_GET['AC Milan Home Jersey'])) {
+        unset($_SESSION["AC Milan Home Jersey"]);
     }
     if (isset($_GET['item2'])) {
         unset($_SESSION["item2"]);
