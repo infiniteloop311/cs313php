@@ -13,13 +13,13 @@ session_start();
     <img src="milanjersey.jpg" alt="Milan Jersey" width="20%"><br/>
     <a href="03proveBrowse.php?item1=bought">Add to Cart</a><br/>
     
-    <img src="romajersey.jpg" alt="Roma Jersey"><br/>
+    <img src="romajersey.jpg" alt="Roma Jersey" width="20%"><br/>
     <a href="03proveBrowse.php?item2=bought">Add to Cart</a><br/>
     
-    <img src="interjersey.jpg" alt="Inter Jersey"><br/>
+    <img src="interjersey.jpg" alt="Inter Jersey" width="20%"><br/>
     <a href="03proveBrowse.php?item3=bought">Add to Cart</a><br/>
     
-    <img src="laziojersey.jpg" alt="Lazio Jersey"><br/>
+    <img src="laziojersey.jpg" alt="Lazio Jersey" width="20%"><br/>
     <a href="03proveBrowse.php?item4=bought">Add to Cart</a><br/>
     
     <?php
