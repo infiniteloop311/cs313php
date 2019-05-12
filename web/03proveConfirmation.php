@@ -18,7 +18,7 @@ session_start();
             echo $itemName . " - Qty. " . $quantity . "<br/><br/>";
         }
 
-        echo "Your items will be shipped to: <br/><br/>";
+        echo "<br/>Your items will be shipped to: <br/><br/>";
         echo htmlspecialchars($_POST["Street"]) . "<br/>" . 
             htmlspecialchars($_POST["City"]) . ", " . htmlspecialchars($_POST["State"]) . 
             " " . htmlspecialchars($_POST["Zipcode"]) . 

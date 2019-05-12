@@ -12,7 +12,7 @@ session_start();
 <body>
     <div id="main2">
         <h1>Checkout</h1>
-        <p>Enter your address:</p>
+        <p>Enter your address below.</p>
         <form method="post" action="03proveConfirmation.php">
             <span>Street: </span>
             <input type="text" name="Street"><br/>
