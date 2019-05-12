@@ -12,6 +12,7 @@ session_start();
 <body>
     <div id="main">
         <h1>Purchase Confirmed</h1>
+        <p>Your items:</p>
         <?php
         foreach ($_SESSION as $itemName => $quantity) {
             echo $itemName . " - Qty. " . $quantity . "<br/><br/>";
