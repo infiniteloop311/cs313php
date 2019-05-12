@@ -27,14 +27,14 @@ session_start();
         }
 
         foreach ($_SESSION as $itemName => $quantity) {
-            echo $itemName . " - Qty. " . $quantity . "<br/>" . 
+            echo $itemName . " - Qty. " . $quantity . "<br/><br/>" . 
                 "<a href=\"03proveCart.php?" . $itemName . "=removed\">Remove " . 
                 $itemName . " from Cart</a><br/><br/>";
         }
         ?>
         <br/>
         <br/>
-        <a href="03proveBrowse.php">Back to Browsing</a><br/>
+        <a href="03proveBrowse.php">Back to Browsing</a><br/><br/>
         <a href="03proveCheckout.php">Checkout</a><br/>
     </div>
 </body>
