@@ -14,7 +14,7 @@
     <br/>
     <div id="assignments">
         <a href="03proveBrowse.php">03 Prove - Shopping Cart</a><br/><br/>
-        <a href="library.php">PHP Project</a>
+        <a href="library_shelf.php">PHP Project</a>
     </div>
 </body>
 </html>
