@@ -20,7 +20,7 @@ catch (PDOException $ex)
     echo 'Error!: ' . $ex->getMessage();
     die();
 }
-/*
+
 foreach ($db->query('SELECT * FROM shelf') as $row)
 {
     echo $row['user_id'] . " " . $row['book_id'] . ":" . $row['author_id'] . "<br>";
