@@ -18,8 +18,8 @@ The portrait column will be for the path to an image of the author.
 CREATE TABLE authorsinfo (
     id   SERIAL NOT NULL PRIMARY KEY,
     name varchar(80) NOT NULL UNIQUE,
-    bio  varchar(255) NOT NULL,
-    portrait bytea NOT NULL
+    bio  varchar NOT NULL,
+    portrait varchar NOT NULL
 );
 
 /*
@@ -29,7 +29,7 @@ The cover column will be for the path to an image of the book cover.
 CREATE TABLE books (
     id SERIAL NOT NULL PRIMARY KEY,
     title varchar(80) NOT NULL,
-    description varchar(255) NOT NULL,
+    description varchar NOT NULL,
     isbn bigint NOT NULL,
     cover varchar
 );
