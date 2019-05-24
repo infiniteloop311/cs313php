@@ -16,3 +16,13 @@ foreach ($db->query('SELECT books.title, authorsinfo.name FROM library
 }
 */
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Testing</title>
+    </head>
+    <body>
+        <h1>TESTING</h1>
+    </body>
+</html>
