@@ -38,7 +38,7 @@ CREATE TABLE books (
 Instead of multiple tables, one for each user, the user_id will tell which user the book belongs to.
 This table connects the book and the author by the id and the information is held in the other tables.
 */
-CREATE TABLE library (
+CREATE TABLE shelf (
     id SERIAL NOT NULL PRIMARY KEY,
     user_id int NOT NULL,
     author_id int NOT NULL,
