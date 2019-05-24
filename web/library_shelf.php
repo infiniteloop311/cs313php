@@ -1,6 +1,6 @@
 <?php
 require "dbConnect.php";
-$db = get_db();
+$db = getDB();
 
 foreach ($db->query('SELECT * FROM shelf') as $row)
 {
