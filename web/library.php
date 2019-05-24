@@ -10,3 +10,9 @@ foreach ($db->query('SELECT books.title, authorsinfo.name FROM library
 }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+</html>
