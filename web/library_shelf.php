@@ -21,7 +21,7 @@ foreach ($db->query('SELECT shelf.book_id, shelf.author_id, books.cover, books.t
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Testing</title>
+        <title>My Shelf</title>
         <style>
             img {
                 width: 15%;
@@ -29,6 +29,5 @@ foreach ($db->query('SELECT shelf.book_id, shelf.author_id, books.cover, books.t
         </style>
     </head>
     <body>
-        <h1>TESTING</h1>
     </body>
 </html>
