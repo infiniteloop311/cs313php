@@ -2,7 +2,7 @@
 require "dbConnect.php";
 $db = getDB();
 
-foreach ($db->query('SELECT books.title, authorsinfo.name FROM shelf
+foreach ($db->query('SELECT books.cover, books.title, authorsinfo.name FROM shelf
                      INNER JOIN books ON shelf.book_id=books.id
                      INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id') as $row)
 {
