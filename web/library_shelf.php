@@ -6,8 +6,8 @@ foreach ($db->query('SELECT books.cover, books.title, authorsinfo.name FROM shel
                      INNER JOIN books ON shelf.book_id=books.id
                      INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id') as $row)
 {
+    echo "<img src=\"$row['cover']\" alt=book_cover>";
     echo $row['cover'] . "<br/>" . $row['title'] . " by " . $row['name'] . "<br/><br/>";
-    /*"<img src=\"$cover\" alt=book_cover>"*/
 }
 ?>
 
