@@ -7,7 +7,7 @@ foreach ($db->query('SELECT books.cover, books.title, authorsinfo.name FROM shel
                      INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id') as $row)
 {
     $cover = $row['cover'];
-    echo "<img src=\"$cover\" alt=$cover><br/>" . $row['title'] . " by " . $row['name'] . "<br/><br/>";
+    echo "<img src=\"$cover\" alt=$cover><br/>" . $row['title'] . "<br/>by " . $row['name'] . "<br/><br/>";
 }
 ?>
 
@@ -17,7 +17,7 @@ foreach ($db->query('SELECT books.cover, books.title, authorsinfo.name FROM shel
         <title>Testing</title>
         <style>
             img {
-                width: 10%;
+                width: 15%;
             }
         </style>
     </head>
