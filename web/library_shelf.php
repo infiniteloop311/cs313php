@@ -10,12 +10,11 @@ foreach ($db->query('SELECT shelf.book_id, shelf.author_id, books.cover, books.t
     $bookid = $row['book_id'];
     $authorid = $row['author_id'];
     $title = $row['title'];
+    $name = $row['name'];
     $cover = $row['cover'];
     echo "<img src=\"$cover\" alt=$cover><br/>" . 
-        "<a href='library_book.php?book_id=$bookid'>$title</a>" . $row['title'] . 
-        "<br/>by " . $row['name'] . "<br/><br/>";
-    
-    //"<a href='scripture.php?row_id=$id'>Visit Scripture</a>"
+        "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
+        "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a>" . "<br/><br/>";
 }
 ?>
 
