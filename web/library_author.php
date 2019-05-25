@@ -14,3 +14,17 @@ if (isset($_GET['author_id']))
     }
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Shelf</title>
+        <style>
+            img {
+                width: 15%;
+            }
+        </style>
+    </head>
+    <body>
+    </body>
+</html>
