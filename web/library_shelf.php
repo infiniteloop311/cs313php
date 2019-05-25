@@ -8,7 +8,7 @@ foreach ($db->query('SELECT books.title, authorsinfo.name FROM shelf
 {
     $cover = $row['cover'];
     echo $cover . "<br/>";
-    echo "<img src=\"$cover\" alt=book_cover>" . "<br/>" . $row['title'] . " by " . $row['name'] . "<br/><br/>";
+    echo $row['cover']/*"<img src=\"$cover\" alt=book_cover>"*/ . "<br/>" . $row['title'] . " by " . $row['name'] . "<br/><br/>";
 }
 ?>
 
