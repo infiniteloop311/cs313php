@@ -1,7 +1,9 @@
 <?php
 require "dbConnect.php";
 $db = getDB();
+?>
 
+<?php
 foreach ($db->query('SELECT shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 
                      FROM shelf
                      INNER JOIN books ON shelf.book_id=books.id
