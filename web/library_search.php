@@ -31,7 +31,7 @@ $db = getDB();
                             FROM shelf
                             INNER JOIN books ON shelf.book_id=books.id
                             INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id
-                            WHERE books.title LIKE \"%$searchstring%\"") as $row)
+                            WHERE books.title LIKE \'%$searchstring%\'") as $row)
             {
                 $bookid = $row['book_id'];
                 $authorid = $row['author_id'];
