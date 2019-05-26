@@ -17,8 +17,16 @@ $db = getDB();
         <header>
             <a href="library_shelf.php">Home</a><br/><br/>
         </header>
-        <form>
+        <form method="post" action="library_search.php">
             <input type="text" name="searchbar" placeholder="Search by Title or Author">
+            <button>Search</button>
         </form>
+        <?php	
+        if (isset($_POST['searchbar']))
+        {
+            $searchstring = $_POST['searchbar'];
+            echo $book;
+        }
+        ?>
     </body>
 </html>
