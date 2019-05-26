@@ -27,9 +27,9 @@ $db = getDB();
             $searchstring = $_POST['searchbar'];
             echo $searchstring . "<br/>";
             
-            foreach ($db->query('SELECT * 
-                                FROM books,authorsinfo
-                                WHERE title LIKE ' . "\"%$searchstring%\"") as $row)
+            foreach ($db->query("SELECT * 
+                                FROM books
+                                WHERE title LIKE \"%$searchstring%\" ") as $row)
             {
                 $bookid = $row['book_id'];
                 $authorid = $row['author_id'];
