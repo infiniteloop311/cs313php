@@ -25,7 +25,7 @@ $db = getDB();
         if (isset($_POST['searchbar']))
         {
             $searchstring = $_POST['searchbar'];
-            echo $book;
+            echo $searchstring;
         }
         ?>
     </body>
