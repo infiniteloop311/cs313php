@@ -29,8 +29,9 @@ $db = getDB();
             
             foreach ($db->query("SELECT * 
                                 FROM books
-                                WHERE title LIKE \"*$searchstring*\" ") as $row)
+                                WHERE title LIKE \'%$searchstring%\' ") as $row)
             {
+                /*
                 $bookid = $row['book_id'];
                 $authorid = $row['author_id'];
                 $title = $row['title'];
@@ -39,6 +40,7 @@ $db = getDB();
                 echo "<img src=\"$cover\" alt=$cover><br/>" . 
                     "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
                     "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a>" . "<br/><br/>";
+                */
             }
         }
         ?>
