@@ -14,6 +14,7 @@ $db = getDB();
         </style>
     </head>
     <body>
+        <a href="library_shelf.php">Home</a>
         <form>
             <input type="text" name="searchbar" placeholder="Search by Title or Author">
         </form>
