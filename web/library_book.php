@@ -15,6 +15,9 @@ $db = getDB();
         </style>
     </head>
     <body>
+        <header>
+            <a href="library_shelf.php">Home</a><br/><br/>
+        </header>
         <?php
         if (isset($_GET['book_id']))
         {

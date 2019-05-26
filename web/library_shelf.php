@@ -14,6 +14,9 @@ $db = getDB();
         </style>
     </head>
     <body>
+        <header>
+            <a href="library_search.php">Search</a><br/><br/>
+        </header>
         <?php
         foreach ($db->query('SELECT shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 
                             FROM shelf
