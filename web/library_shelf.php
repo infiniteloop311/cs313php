@@ -18,10 +18,10 @@ $db = getDB();
             <a href="library_search.php">Search</a><br/><br/>
         </header>
         <?php
-        foreach ($db->query('SELECT shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 
+        foreach ($db->query("SELECT shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 
                             FROM shelf
                             INNER JOIN books ON shelf.book_id=books.id
-                            INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id') as $row)
+                            INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id") as $row)
         {
             $bookid = $row['book_id'];
             $authorid = $row['author_id'];
