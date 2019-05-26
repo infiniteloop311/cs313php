@@ -29,7 +29,7 @@ $db = getDB();
             
             foreach ($db->query("SELECT * 
                                 FROM books
-                                WHERE title LIKE \"%title%\" ") as $row)
+                                WHERE title LIKE \"*$searchstring*\" ") as $row)
             {
                 $bookid = $row['book_id'];
                 $authorid = $row['author_id'];
