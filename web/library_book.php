@@ -3,7 +3,6 @@ require "dbConnect.php";
 $db = getDB();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
