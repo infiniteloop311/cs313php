@@ -25,13 +25,11 @@ $db = getDB();
         if (isset($_POST['searchbar']))
         {
             $searchstring = $_POST['searchbar'];
-            echo $searchstring;
+            echo $searchstring . "<br/>";
             
-            foreach ($db->query('SELECT shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 
-                                FROM shelf
-                                INNER JOIN books ON shelf.book_id=books.id
-                                INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id
-                                WHERE books.title LIKE \'%$searchstring%\'') as $row)
+            foreach ($db->query('SELECT * 
+                                FROM books,authorsinfo
+                                WHERE title LIKE ' . "\"%$searchstring%\"") as $row)
             {
                 $bookid = $row['book_id'];
                 $authorid = $row['author_id'];
