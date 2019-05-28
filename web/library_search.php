@@ -34,7 +34,7 @@ $db = getDB();
             //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
             $stmt = $db->prepare('SELECT * FROM books WHERE title LIKE \'%:search%\'');
-            $stmt->bindValue(':search', $searchstring, PDO::PARAM_STR);
+            $stmt->bindValue(':searchstring', $searchstring, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             /*
