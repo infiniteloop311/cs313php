@@ -27,6 +27,17 @@ $db = getDB();
             $searchstring = $_POST['searchbar'];
             echo $searchstring . "<br/>";
             
+            //$stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
+            //$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            //$stmt->bindValue(':name', $name, PDO::PARAM_STR);
+            //$stmt->execute();
+            //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            $stmt = $db->prepare('SELECT * FROM books WHERE title LIKE \'%:search%\'');
+            $stmt->bindValue(':search', $searchstring, PDO::PARAM_STR);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            /*
             foreach ($db->query("SELECT * 
                                 FROM books
                                 WHERE title LIKE \'%$searchstring%\'") as $row)
@@ -40,6 +51,7 @@ $db = getDB();
                     "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
                     "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a>" . "<br/><br/>";
             }
+            */
         }
         ?>
     </body>
