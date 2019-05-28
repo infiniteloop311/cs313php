@@ -41,6 +41,7 @@ $db = getDB();
             $stmt = $db->prepare('SELECT * FROM books WHERE title LIKE \'%:id%\'');
             $stmt->execute(array(':id' => $id));
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
             /*
             foreach ($db->query("SELECT * 
                                 FROM books
