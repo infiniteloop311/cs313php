@@ -31,11 +31,17 @@ $db = getDB();
             //$stmt->bindValue(':id', $id, PDO::PARAM_INT);
             //$stmt->bindValue(':name', $name, PDO::PARAM_STR);
             //$stmt->execute();
+            //$stmt->execute(array(':name' => $name, ':id' => $id));
+            //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            //or
+            //$stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
+            //$stmt->execute(array(':name' => $name, ':id' => $id));
             //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
             $stmt = $db->prepare('SELECT * FROM books WHERE title LIKE \'%:search%\'');
-            $stmt->bindValue(':searchstring', $searchstring, PDO::PARAM_STR);
-            $stmt->execute();
+            //$stmt->bindValue(':searchstring', $searchstring, PDO::PARAM_STR);
+            //$stmt->execute();
+            $stmt->execute(array(':search' => $searchstring));
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             /*
             foreach ($db->query("SELECT * 
