@@ -38,8 +38,8 @@ $db = getDB();
             //$stmt->execute(array(':name' => $name, ':id' => $id));
             //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
-            $stmt = $db->prepare('SELECT * FROM books WHERE title LIKE :id');
-            $stmt->execute(array(':id' => $id));
+            $stmt = $db->prepare('SELECT * FROM books WHERE title LIKE :search');
+            $stmt->execute(array(':search' => $searchstring));
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
             /*
