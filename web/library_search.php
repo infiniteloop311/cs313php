@@ -26,24 +26,41 @@ $db = getDB();
             $searchstring = $_POST['searchbar'];
             echo $searchstring . "<br/>";
             
-            //$stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
-            //$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-            //$stmt->bindValue(':name', $name, PDO::PARAM_STR);
-            //$stmt->execute();
-            //$stmt->execute(array(':name' => $name, ':id' => $id));
-            //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            //or
-            //$stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
-            //$stmt->execute(array(':name' => $name, ':id' => $id));
-            //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
-            $stmt = $db->prepare('SELECT * FROM books WHERE title ILIKE :search');
+            $stmt = $db->prepare('SELECT s.book_id, s.author_id, books.cover, books.title as title, authorsinfo.name as name
+                                  FROM shelf as s
+                                  INNER JOIN books ON s.book_id=books.id
+                                  INNER JOIN authorsinfo ON s.author_id=authorsinfo.id
+                                  WHERE title ILIKE :search');
             $stmt->execute(array(':search' => "%$searchstring%"));
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
             foreach ($rows as $row) {
-                echo $row['title'] . "<br/>";
+                $bookid = $row['book_id'];
+                $authorid = $row['author_id'];
+                $cover = $row['cover'];
+                $title = $row['title'];
+                $name = $row['name'];
+                echo "<img src=\"$cover\" alt=$cover><br/>" . 
+                    "<a href='library_book.php?book_id=$bookid'>$title</a>"
+                    "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a>" . "<br/><br/>";
             }
+            
+            /*
+            foreach ($db->query("SELECT shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 
+                            FROM shelf
+                            INNER JOIN books ON shelf.book_id=books.id
+                            INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id") as $row)
+            {
+                $bookid = $row['book_id'];
+                $authorid = $row['author_id'];
+                $title = $row['title'];
+                $name = $row['name'];
+                $cover = $row['cover'];
+                echo "<img src=\"$cover\" alt=$cover><br/>" . 
+                    "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
+                    "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a>" . "<br/><br/>";
+            }
+            */
         }
         ?>
     </body>
