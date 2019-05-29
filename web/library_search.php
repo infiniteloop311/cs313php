@@ -38,25 +38,9 @@ $db = getDB();
             //$stmt->execute(array(':name' => $name, ':id' => $id));
             //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
-            $stmt = $db->prepare("SELECT * FROM books WHERE title LIKE \"%:search%\"");
-            $stmt->execute(array(":search" => $searchstring));
+            $stmt = $db->prepare("SELECT * FROM books WHERE title LIKE :search");
+            $stmt->execute(array(":search" => "%$searchstring%"));
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
-            /*
-            foreach ($db->query("SELECT * 
-                                FROM books
-                                WHERE title LIKE \'%$searchstring%\'") as $row)
-            {
-                $bookid = $row['book_id'];
-                $authorid = $row['author_id'];
-                $title = $row['title'];
-                $name = $row['name'];
-                $cover = $row['cover'];
-                echo "<img src=\"$cover\" alt=$cover><br/>" . 
-                    "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
-                    "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a>" . "<br/><br/>";
-            }
-            */
         }
         ?>
     </body>
