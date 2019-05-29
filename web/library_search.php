@@ -30,7 +30,7 @@ $db = getDB();
                                   FROM shelf as s
                                   INNER JOIN books ON s.book_id=books.id
                                   INNER JOIN authorsinfo ON s.author_id=authorsinfo.id
-                                  WHERE title ILIKE :search');
+                                  WHERE title ILIKE :search OR name ILIKE :search');
             $stmt->execute(array(':search' => "%$searchstring%"));
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
@@ -44,23 +44,6 @@ $db = getDB();
                     "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
                     "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a>" . "<br/><br/>";
             }
-            
-            /*
-            foreach ($db->query("SELECT shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 
-                            FROM shelf
-                            INNER JOIN books ON shelf.book_id=books.id
-                            INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id") as $row)
-            {
-                $bookid = $row['book_id'];
-                $authorid = $row['author_id'];
-                $title = $row['title'];
-                $name = $row['name'];
-                $cover = $row['cover'];
-                echo "<img src=\"$cover\" alt=$cover><br/>" . 
-                    "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
-                    "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a>" . "<br/><br/>";
-            }
-            */
         }
         ?>
     </body>
