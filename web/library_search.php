@@ -22,8 +22,7 @@ $db = getDB();
             <button>Search</button>
         </form>
         <?php	
-        if (isset($_POST['searchbar']))
-        {
+        if (isset($_POST['searchbar'])) {
             $searchstring = $_POST['searchbar'];
             echo $searchstring . "<br/>";
             
@@ -41,6 +40,10 @@ $db = getDB();
             $stmt = $db->prepare('SELECT * FROM books WHERE title LIKE :search');
             $stmt->execute(array(':search' => "%$searchstring%"));
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            foreach ($rows as $row) {
+                echo $row['title'] . "<br/>";
+            }
         }
         ?>
     </body>
