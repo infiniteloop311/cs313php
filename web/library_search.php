@@ -34,9 +34,9 @@ $db = getDB();
             $stmt->execute(array(':search' => "%$searchstring%"));
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
-            if (!(mysqli_num_rows($rows) > 0)) { 
+            if (empty($rows)) { 
                 echo "<br/>No Results Found<br/>";
-            } else if (mysqli_num_rows($rows) > 0) {
+            } else if (!empty($rows)) {
                 echo "<br/>Rows Found<br/>";
             }
             
