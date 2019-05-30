@@ -11,16 +11,8 @@ $db = getDB();
             img {
                 width: 15%;
             }
-            [class*="col-"] {
-                float: left;
-                padding: 15px;
-                border: 1px solid black;
-                text-align: center;
-            }
-            .col-4 {
-                width: 33.33%;
-            }
         </style>
+        <link rel="stylesheet" type="text/css" href="library_styles.css">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <!-- jQuery library -->
