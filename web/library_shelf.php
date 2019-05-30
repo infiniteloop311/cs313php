@@ -52,6 +52,7 @@ $db = getDB();
             <div class="col-4">One</div>
             <div class="col-4">Two</div>
             <div class="col-4">Three</div>
+            <div class="col-4">Four</div>
         </main>
     </body>
 </html>
