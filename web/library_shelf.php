@@ -37,6 +37,7 @@ $db = getDB();
                     "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a></div>";
             }
             ?>
+            <br/>
             <div class="col-4">Test</div>
         </main>
     </body>
