@@ -28,8 +28,8 @@ $db = getDB();
             foreach ($db->query("SELECT * FROM books WHERE id='$id'") as $row)
             {
                 $cover = $row['cover'];
-                echo "<img src=\"$cover\" alt=$cover><br/>" . $row['title'] . 
-                    "<br/><br/>" . $row['description'] . "<br/><br/>" . $row['isbn'];
+                echo "<div><img src=\"$cover\" alt=$cover><br/>" . $row['title'] . 
+                    "<br/><br/>" . $row['description'] . "<br/><br/>" . $row['isbn'] . "<br/>";
             }
         }
         ?>
