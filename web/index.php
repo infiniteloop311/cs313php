@@ -11,7 +11,7 @@
 <body>
     <div id="header">
         <h1>My Home Page</h1>
-        <a href="assignments.php">Assignments</a><br/><br/><br/>
+        <a href="assignments.php">Assignments</a><br/><br/>
         <img src="02banner.jpg" alt="Scenery banner" id="banner">
     </div>
     <div>
