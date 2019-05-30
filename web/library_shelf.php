@@ -7,8 +7,6 @@ $db = getDB();
 <html lang="en">
     <head>
         <title>My Shelf</title>
-        <style>
-        </style>
         <link rel="stylesheet" type="text/css" href="library_styles.css">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -33,9 +31,9 @@ $db = getDB();
                 $title = $row['title'];
                 $name = $row['name'];
                 $cover = $row['cover'];
-                echo "<img src=\"$cover\" alt=$cover><br/>" . 
+                echo "<div class=\"col-4\"><img src=\"$cover\" alt=$cover><br/>" . 
                     "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
-                    "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a>" . "<br/><br/>";
+                    "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a>" . "<br/><br/></div>";
             }
             ?>
             <div class="col-4">One</div>
