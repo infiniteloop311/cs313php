@@ -15,6 +15,7 @@ $db = getDB();
                 float: left;
                 padding: 15px;
                 border: 1px solid black;
+                text-align: center;
             }
             .col-4 {
                 width: 33.33%;
