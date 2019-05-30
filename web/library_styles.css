@@ -11,8 +11,4 @@ img {
 
 .col-4 {
     width: 33.33%;
-    float: left;
-    padding: 15px;
-    border: 1px solid black;
-    text-align: center;
 }
