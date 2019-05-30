@@ -29,7 +29,7 @@ $db = getDB();
             {
                 $cover = $row['cover'];
                 echo "<div><img src=\"$cover\" alt=$cover><br/>" . $row['title'] . 
-                    "<br/><br/>" . $row['description'] . "<br/><br/>" . $row['isbn'] . "<br/>";
+                    "<br/><br/>" . $row['description'] . "<br/><br/>" . $row['isbn'] . "</div>";
             }
         }
         ?>
