@@ -8,9 +8,6 @@ $db = getDB();
     <head>
         <title>My Shelf</title>
         <style>
-            img {
-                width: 15%;
-            }
         </style>
         <link rel="stylesheet" type="text/css" href="library_styles.css">
         <!-- Latest compiled and minified CSS -->
