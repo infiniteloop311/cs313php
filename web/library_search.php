@@ -24,7 +24,7 @@ $db = getDB();
         <?php	
         if (isset($_POST['searchbar'])) {
             $searchstring = $_POST['searchbar'];
-            echo $searchstring . "<br/>";
+            echo "<br/><br/>";
             
             $stmt = $db->prepare('SELECT s.book_id, s.author_id, books.cover, books.title as title, authorsinfo.name as name
                                   FROM shelf as s
@@ -33,6 +33,12 @@ $db = getDB();
                                   WHERE title ILIKE :search OR name ILIKE :search');
             $stmt->execute(array(':search' => "%$searchstring%"));
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            if (mysqli_num_rows($rows) == 0) { 
+                echo "<br/>No Results Found<br/>";
+            } else if (mysqli_num_rows($rows)!=0) {
+                echo "<br/>Rows Found<br/>";
+            }
             
             foreach ($rows as $row) {
                 $bookid = $row['book_id'];
