@@ -35,21 +35,19 @@ $db = getDB();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
             if (empty($rows)) { 
-                echo "<br/>No Results Found<br/>";
+                echo "No Results Found<br/>";
             } else if (!empty($rows)) {
-                echo "<br/>Rows Found<br/>";
-            }
-            
-            foreach ($rows as $row) {
-                $bookid = $row['book_id'];
-                $authorid = $row['author_id'];
-                $cover = $row['cover'];
-                $title = $row['title'];
-                $name = $row['name'];
-                echo "<img src=\"$cover\" alt=$cover><br/>" . 
-                    "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
-                    "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a>" . "<br/><br/>";
-            }
+                foreach ($rows as $row) {
+                    $bookid = $row['book_id'];
+                    $authorid = $row['author_id'];
+                    $cover = $row['cover'];
+                    $title = $row['title'];
+                    $name = $row['name'];
+                    echo "<img src=\"$cover\" alt=$cover><br/>" . 
+                        "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
+                        "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a>" . "<br/><br/>";
+                }
+            }            
         }
         ?>
     </body>
