@@ -29,7 +29,7 @@ id | userlogin | passwordhash | firstname | lastname
             <h1>Welcome to your Personal Library</h1>
         </header>
         <main>
-            <h3>Login to Access your Shelf</h3>
+            <h3>Login to Access your Book Shelf</h3>
             <form method="post" action="library_login.php">
                 <input type="text" name="user" placeholder="Enter Username"><br/>
                 <input type="password" name="pass" placeholder="Enter Password"><br/>
@@ -47,19 +47,23 @@ id | userlogin | passwordhash | firstname | lastname
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 
                 if (empty($rows)) { 
-                    echo "No Results Found<br/>";
+                    echo "Login Failed<br/>";
                 } else if (!empty($rows)) {
                     foreach ($rows as $row) {
                         $user = $row['userlogin'];
                         $pass = $row['passwordhash'];
                         $firstname = $row['firstname'];
                         $lastname = $row['lastname'];
-                        echo "$user<br/>$pass<br/>$firstname<br/>$lastname";
+                        $_SESSION["user"] = $user;
+                        $_SESSION["pass"] = $pass;
+                        $_SESSION["first"] = $firstname;
+                        $_SESSION["last"] = $lastname;
+                        //echo "$user<br/>$pass<br/>$firstname<br/>$lastname";
                     }
+                    $new_page = "library_shelf.php";
+                    header("Location: $new_page");
+                    die();
                 }
-                //$new_page = "course_notes.php?course_id=$course_id";
-                //header("Location: $new_page");
-                //die();
             }
             ?>
         </main>
