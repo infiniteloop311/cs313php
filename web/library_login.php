@@ -39,11 +39,24 @@ id | userlogin | passwordhash | firstname | lastname
             if (!empty($_POST['user']) and !empty($_POST['pass'])) {
                 $username = $_POST['user'];
                 $password = $_POST['pass'];
+                
                 $stmt = $db->prepare('SELECT u.id, u.userlogin, u.passwordhash, u.firstname, u.lastname
                                       FROM users as u
                                       WHERE userlogin=:username AND passwordhash=:password');
                 $stmt->execute(array(':username' => "$username", ':password' => "$password"));
-                echo "$username<br/>$password";
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                
+                if (empty($rows)) { 
+                    echo "No Results Found<br/>";
+                } else if (!empty($rows)) {
+                    foreach ($rows as $row) {
+                        $user = $row['username'];
+                        $pass = $row['passwordhash'];
+                        $firstname = $row['firstname'];
+                        $lastname = $row['lastname'];
+                        echo "$user<br/>$pass<br/>$firstname<br/>$lastname";
+                    }
+                }
             }
             ?>
         </main>

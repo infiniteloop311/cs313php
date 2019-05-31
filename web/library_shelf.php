@@ -38,7 +38,6 @@ $db = getDB();
                 echo "<div class=\"col-4\"><img src=\"$cover\" alt=$cover><br/>" . 
                     "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
                     "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a></div>";
-                //<img src=\"$cover\" alt=$cover><br/>
             }
             ?>
         </main>
