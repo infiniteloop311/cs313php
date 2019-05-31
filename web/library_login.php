@@ -36,7 +36,7 @@ id | userlogin | passwordhash | firstname | lastname
                 <input type="submit" value="Login">
             </form>
             <?php
-            if (isset($_POST['user']) and isset($_POST['pass'])) {
+            if (!empty($_POST['user']) and !empty($_POST['pass'])) {
                 $username = $_POST['user'];
                 $password = $_POST['pass'];
                 $stmt = $db->prepare('SELECT u.id, u.userlogin, u.passwordhash, u.firstname, u.lastname
