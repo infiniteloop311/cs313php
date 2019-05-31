@@ -2,13 +2,11 @@ img {
     /*width: 30%;*/
     width: 150px;
     height: 220px;
-    vertical-align: bottom;
 }
 
 [class*="col-"] {
     float: left;
     padding: 15px;
-    border: 1px solid black;
     text-align: center;
 }
 
