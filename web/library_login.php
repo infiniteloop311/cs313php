@@ -30,12 +30,22 @@ id | userlogin | passwordhash | firstname | lastname
         </header>
         <main>
             <h3>Login to Access your Shelf</h3>
-            <form method="post" action="">
+            <form method="post" action="library_login.php">
                 <input type="text" name="username" placeholder="Enter Username"><br/>
                 <input type="text" name="password" placeholder="Enter Password"><br/>
                 <button>Login</button>
             </form>
             <?php
+            if (isset($_POST['username']) and isset($_POST['password'])) {
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $stmt = $db->prepare('SELECT users.id as id, users.userlogin as user, users.passwordhash as pass, 
+                                             users.firstname as first, users.lastname as last
+                                      FROM users as u
+                                      WHERE user=:username AND pass=:password');
+                $stmt->execute(array(':username' => "$username", ':password' => "$password"));
+                echo "Test";
+            }
             ?>
         </main>
     </body>
