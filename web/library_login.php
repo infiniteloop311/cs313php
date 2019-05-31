@@ -39,10 +39,9 @@ id | userlogin | passwordhash | firstname | lastname
             if (isset($_POST['username']) and isset($_POST['password'])) {
                 $username = $_POST['username'];
                 $password = $_POST['password'];
-                $stmt = $db->prepare('SELECT u.id as id, u.userlogin as user, u.passwordhash as pass, 
-                                             u.firstname as first, u.lastname as last
+                $stmt = $db->prepare('SELECT u.id, u.userlogin, u.passwordhash, u.firstname, u.lastname
                                       FROM users as u
-                                      WHERE user=:username AND pass=:password');
+                                      WHERE userlogin=:username AND passwordhash=:password');
                 $stmt->execute(array(':username' => "$username", ':password' => "$password"));
                 echo "Test";
             }
