@@ -20,7 +20,8 @@ $db = getDB();
     </head>
     <body>
         <header>
-            <a href="library_shelf.php">Home</a><br/><br/>
+            <a href="library_shelf.php">Home</a><br/>
+            <a href="library_search.php">Search</a><br/><br/>
         </header>
         <form method="post" action="library_search.php">
             <input type="text" name="searchbar" placeholder="Search by Title or Author">
