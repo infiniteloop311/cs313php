@@ -20,18 +20,20 @@ $db = getDB();
     </head>
     <body>
         <header>
-            <h1>BookShelf</h1>
-            <p>
-                <?php 
-                echo $_SESSION["userid"] . " " . 
-                    $_SESSION["user"] . " " . 
-                    $_SESSION["pass"] . " " . 
-                    $_SESSION["first"] . " " . 
-                    $_SESSION["last"]
-                ?>
-            </p>
-            <a href="library_shelf.php">Home</a><br/>
-            <a href="library_search.php">Search</a><br/><br/>
+            <div class="col-6">
+                <h1>BookShelf</h1>
+            </div>
+            <div class="col-6">
+                <p>
+                    <?php
+                    echo "Welcome, " . $_SESSION["first"] . " " . $_SESSION["last"];
+                    ?>
+                </p>
+            </div>
+            <div class="col-12">
+                <a href="library_shelf.php">Home</a><br/>
+                <a href="library_search.php">Search</a><br/><br/>
+            </div>
         </header>
         <main>
             <?php
