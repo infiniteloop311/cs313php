@@ -30,7 +30,7 @@ $db = getDB();
         </form>
         <?php	
         if (isset($_POST['searchbar'])) {
-            $searchstring = $_POST['searchbar'];
+            $searchstring = htmlspecialchars($_POST['searchbar']);
             echo "<br/><br/>";
             
             $stmt = $db->prepare('SELECT s.book_id, s.author_id, books.cover, books.title as title, authorsinfo.name as name

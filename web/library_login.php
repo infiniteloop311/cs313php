@@ -37,8 +37,8 @@ id | userlogin | passwordhash | firstname | lastname
             </form>
             <?php
             if (!empty($_POST['user']) and !empty($_POST['pass'])) {
-                $username = $_POST['user'];
-                $password = $_POST['pass'];
+                $username = htmlspecialchars($_POST['user']);
+                $password = htmlspecialchars($_POST['pass']);
                 
                 $stmt = $db->prepare('SELECT u.id, u.userlogin, u.passwordhash, u.firstname, u.lastname
                                       FROM users as u
@@ -50,6 +50,7 @@ id | userlogin | passwordhash | firstname | lastname
                     echo "Login Failed<br/>";
                 } else if (!empty($rows)) {
                     foreach ($rows as $row) {
+                        $id = $row['id'];
                         $user = $row['userlogin'];
                         $pass = $row['passwordhash'];
                         $firstname = $row['firstname'];
@@ -58,9 +59,8 @@ id | userlogin | passwordhash | firstname | lastname
                         $_SESSION["pass"] = $pass;
                         $_SESSION["first"] = $firstname;
                         $_SESSION["last"] = $lastname;
-                        //echo "$user<br/>$pass<br/>$firstname<br/>$lastname";
                     }
-                    $new_page = "library_shelf.php";
+                    $new_page = "library_shelf.php?user_id=$id";
                     header("Location: $new_page");
                     die();
                 }
