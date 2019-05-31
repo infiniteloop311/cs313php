@@ -33,7 +33,7 @@ id | userlogin | passwordhash | firstname | lastname
             <form method="post" action="library_login.php">
                 <input type="text" name="user" placeholder="Enter Username"><br/>
                 <input type="password" name="pass" placeholder="Enter Password"><br/>
-                <input type="submit" value="Login">
+                <input type="submit" value="Login"><br/>
             </form>
             <?php
             if (!empty($_POST['user']) and !empty($_POST['pass'])) {
@@ -55,12 +55,13 @@ id | userlogin | passwordhash | firstname | lastname
                         $pass = $row['passwordhash'];
                         $firstname = $row['firstname'];
                         $lastname = $row['lastname'];
+                        $_SESSION["userid"] = $id;
                         $_SESSION["user"] = $user;
                         $_SESSION["pass"] = $pass;
                         $_SESSION["first"] = $firstname;
                         $_SESSION["last"] = $lastname;
                     }
-                    $new_page = "library_shelf.php?user_id=$id";
+                    $new_page = "library_shelf.php";
                     header("Location: $new_page");
                     die();
                 }

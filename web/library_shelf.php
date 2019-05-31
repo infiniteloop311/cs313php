@@ -23,6 +23,15 @@ $db = getDB();
             <h1>BookShelf</h1>
             <a href="library_shelf.php">Home</a><br/>
             <a href="library_search.php">Search</a><br/><br/>
+            <p>
+                <?php 
+                echo $_SESSION["userid"] . " " . 
+                    $_SESSION["user"] . " " . 
+                    $_SESSION["pass"] . " " . 
+                    $_SESSION["first"] . " " . 
+                    $_SESSION["last"]
+                ?>
+            </p>
         </header>
         <main>
             <?php
