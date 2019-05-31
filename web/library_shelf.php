@@ -21,8 +21,6 @@ $db = getDB();
     <body>
         <header>
             <h1>BookShelf</h1>
-            <a href="library_shelf.php">Home</a><br/>
-            <a href="library_search.php">Search</a><br/><br/>
             <p>
                 <?php 
                 echo $_SESSION["userid"] . " " . 
@@ -32,13 +30,17 @@ $db = getDB();
                     $_SESSION["last"]
                 ?>
             </p>
+            <a href="library_shelf.php">Home</a><br/>
+            <a href="library_search.php">Search</a><br/><br/>
         </header>
         <main>
             <?php
-            foreach ($db->query("SELECT shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 
+            $id = $_SESSION["userid"];
+            foreach ($db->query("SELECT shelf.user_id, shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 
                                 FROM shelf
                                 INNER JOIN books ON shelf.book_id=books.id
-                                INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id") as $row)
+                                INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id
+                                WHERE user_id=$id") as $row)
             {
                 $bookid = $row['book_id'];
                 $authorid = $row['author_id'];
