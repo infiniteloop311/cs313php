@@ -33,7 +33,7 @@ id | userlogin | passwordhash | firstname | lastname
             <form method="post" action="library_login.php">
                 <input type="text" name="username" placeholder="Enter Username"><br/>
                 <input type="text" name="password" placeholder="Enter Password"><br/>
-                <button>Login</button>
+                <input type="submit" value="Login">
             </form>
             <?php
             if (isset($_POST['username']) and isset($_POST['password'])) {
