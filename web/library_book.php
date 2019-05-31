@@ -20,6 +20,7 @@ $db = getDB();
     </head>
     <body>
         <header>
+            <h1>BookShelf</h1>
             <a href="library_shelf.php">Home</a><br/>
             <a href="library_search.php">Search</a><br/><br/>
         </header>

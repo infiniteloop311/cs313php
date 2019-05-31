@@ -50,13 +50,16 @@ id | userlogin | passwordhash | firstname | lastname
                     echo "No Results Found<br/>";
                 } else if (!empty($rows)) {
                     foreach ($rows as $row) {
-                        $user = $row['username'];
+                        $user = $row['userlogin'];
                         $pass = $row['passwordhash'];
                         $firstname = $row['firstname'];
                         $lastname = $row['lastname'];
                         echo "$user<br/>$pass<br/>$firstname<br/>$lastname";
                     }
                 }
+                //$new_page = "course_notes.php?course_id=$course_id";
+                //header("Location: $new_page");
+                //die();
             }
             ?>
         </main>
