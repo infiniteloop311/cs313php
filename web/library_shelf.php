@@ -24,11 +24,12 @@ $db = getDB();
                 <h1>BookShelf</h1>
             </div>
             <div class="col-6">
-                <p>
+                <h4>
                     <?php
-                    echo "Welcome, " . $_SESSION["first"] . " " . $_SESSION["last"];
+                    echo "Welcome, " . $_SESSION["first"] . " " . $_SESSION["last"] . " " . 
+                        "<a href='library_logout.php'>Logout</a>";
                     ?>
-                </p>
+                </h4>
             </div>
             <div class="col-12">
                 <a href="library_shelf.php">Home</a><br/>
