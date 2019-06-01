@@ -32,9 +32,9 @@ $db = getDB();
         <main>
             <h4>Login to Access your Book Shelf</h4>
             <form method="post" action="library_login.php">
-                <input type="text" name="user" placeholder="Enter Username"><br/>
-                <input type="password" name="pass" placeholder="Enter Password"><br/>
-                <input type="submit" value="Login"><br/><br/>
+                <input type="text" name="user" placeholder="Enter Username"><br/><br/>
+                <input type="password" name="pass" placeholder="Enter Password"><br/><br/>
+                <input type="submit" value="Login">
             </form>
             <a href="library_register.php">Don't Have an Account? Register Here.</a>
             <?php
@@ -49,7 +49,7 @@ $db = getDB();
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 
                 if (empty($rows)) { 
-                    echo "<br/>Login Failed<br/>";
+                    echo "<br/><br/>Login Failed<br/>";
                 } else if (!empty($rows)) {
                     foreach ($rows as $row) {
                         $id = $row['id'];

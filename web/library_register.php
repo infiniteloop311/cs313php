@@ -25,11 +25,11 @@ $db = getDB();
         <main>
             <h4>Fill out the form below to register</h4>
             <form method="post" action="library_register.php">
-                <input type="text" name="first" placeholder="Enter Firstname"><br/>
-                <input type="text" name="last" placeholder="Enter Lastname"><br/>
-                <input type="text" name="user" placeholder="Enter Username"><br/>
-                <input type="password" name="pass" placeholder="Enter Password"><br/>
-                <input type="submit" value="Register"><br/>
+                <input type="text" name="first" placeholder="Enter Firstname"><br/><br/>
+                <input type="text" name="last" placeholder="Enter Lastname"><br/><br/>
+                <input type="text" name="user" placeholder="Enter Username"><br/><br/>
+                <input type="password" name="pass" placeholder="Enter Password"><br/><br/>
+                <input type="submit" value="Register">
             </form>
             <?php
             if (!empty($_POST['user']) and 

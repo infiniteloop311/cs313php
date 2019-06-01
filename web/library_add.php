@@ -30,7 +30,7 @@ $db = getDB();
                         "<a href='library_logout.php'>Logout</a>";
                     ?>
                 </h4>
-                <a href="library_add.php">Add Book to Shelf</a>
+                <a href="library_add.php" style="visibility: hidden">Add Book to Shelf</a>
             </div>
             <div class="col-12">
                 <a href="library_shelf.php">Home</a><br/>
@@ -39,13 +39,13 @@ $db = getDB();
         </header>
         <main>
             <form method="post" action="library_add.php">
-                <input type="text" name="title" placeholder="Enter Title"><br/>
-                <textarea rows="5" cols="50" placeholder="Enter Description"></textarea><br/>
-                <input type="cover" name="cover" placeholder="Enter Filename for Cover"><br/>
-                <input type="isbn" name="isbn" placeholder="Enter ISBN"><br/>
+                <input type="text" name="title" placeholder="Enter Title"><br/><br/>
+                <textarea rows="5" cols="50" placeholder="Enter Description"></textarea><br/><br/>
+                <input type="text" name="cover" placeholder="Enter Filename for Cover"><br/><br/>
+                <input type="text" name="isbn" placeholder="Enter ISBN"><br/><br/>
                 <select>
                     <option value="other">Other</option>
-                </select><br/><br/>
+                </select><br/><br/><br/>
                 <input type="submit" value="Add Book">
             </form>
         </main>
