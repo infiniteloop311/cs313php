@@ -50,10 +50,10 @@ $db = getDB();
                 if(!empty($rows))
                     echo "Username already exists!<br/>";
                 else if (empty($rows)) {
-                    $stmt = $db->prepare('INSERT INTO users(userlogin, passwordhash, firstname, lastname) 
+                    $stmt2 = $db->prepare('INSERT INTO users(userlogin, passwordhash, firstname, lastname) 
                                           VALUES (:user, :pass, :first, :last);');
-                    $stmt->execute(array(':user' => "$username", ':pass' => "$password", ':first' => "$firstname", ':last' => "$lastname"));
-                    $newId = $stmt->lastInsertId();
+                    $stmt2->execute(array(':user' => "$username", ':pass' => "$password", ':first' => "$firstname", ':last' => "$lastname"));
+                    $newId = $db->lastInsertId();
                     
                     $_SESSION["userid"] = $newId;
                     $_SESSION["user"] = $username;
