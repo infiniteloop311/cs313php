@@ -36,6 +36,7 @@ $db = getDB();
                 <input type="password" name="pass" placeholder="Enter Password"><br/><br/>
                 <input type="submit" value="Login">
             </form>
+            <br/>
             <a href="library_register.php">Don't Have an Account? Register Here.</a>
             <?php
             if (!empty($_POST['user']) and !empty($_POST['pass'])) {

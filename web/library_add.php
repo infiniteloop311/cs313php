@@ -45,19 +45,9 @@ $db = getDB();
                 <input type="text" name="cover" placeholder="Enter Cover Filename"><br/><br/>
                 <input type="text" name="isbn" placeholder="Enter ISBN"><br/><br/>
                 <span>Enter Author Details</span><br/>
-                <select name="author">
-                    <?php
-                    $stmt = $db->prepare('SELECT authorsinfo.name
-                                          FROM authorsinfo');
-                    $stmt->execute();
-                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    foreach ($rows as $row) {
-                        $authorname = $row['name'];
-                        echo "<option value=\"$authorname\">$authorname</option>";
-                    }
-                    ?>
-                    <option value="other">Other</option>
-                </select><br/><br/><br/>
+                <input type="text" name="name" placeholder="Enter Author's Name"><br/><br/>
+                <textarea rows="5" cols="50" placeholder="Enter Author Bio"></textarea>
+                <input type="text" name="portrait" placeholder="Enter Portrait Filename"><br/><br/>
                 <input type="submit" value="Add Book">
             </form>
         </main>
