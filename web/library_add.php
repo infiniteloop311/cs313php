@@ -51,13 +51,8 @@ $db = getDB();
                 <input type="submit" value="Add Book">
             </form>
             <?php
-            if (!empty($_POST['title']) and 
-                !empty($_POST['description']) and 
-                !empty($_POST['cover']) and 
-                !empty($_POST['isbn']) and 
-                !empty($_POST['name']) and 
-                !empty($_POST['bio']) and 
-                !empty($_POST['portrait'])) {
+            if (!empty($_POST['title']) and !empty($_POST['description']) and !empty($_POST['cover']) and !empty($_POST['isbn']) and 
+                !empty($_POST['name']) and !empty($_POST['bio']) and !empty($_POST['portrait'])) {
                 $title = htmlspecialchars($_POST['title']);
                 $description = htmlspecialchars($_POST['description']);
                 $cover = htmlspecialchars($_POST['cover']);
@@ -65,9 +60,33 @@ $db = getDB();
                 $name = htmlspecialchars($_POST['name']);
                 $bio = htmlspecialchars($_POST['bio']);
                 $portrait = htmlspecialchars($_POST['portrait']);
-                echo "$title<br/>$description<br/>$cover<br/>$isbn<br/>$name<br/>$bio<br/>$portrait<br/>";
                 $currentUser = $_SESSION["userid"];
+                echo "$title<br/>$description<br/>$cover<br/>$isbn<br/>$name<br/>$bio<br/>$portrait<br/>";
                 echo $currentUser;
+                
+                $stmtBook = $db->prepare('INSERT INTO books(title, description, isbn, cover) VALUES (:title, :des, :isbn, :cover);');
+                $stmtBook->execute(array(':title' => "$title", ':des' => "$description", ':isbn' => "$isbn", ':cover' => "$cover"));
+                $bookId = $db->lastInsertId();
+                
+                $stmtSearch = $db->prepare('SELECT a.id, a.name FROM authorsinfo AS a WHERE name=:nameA');
+                $stmtSearch->execute(array(':nameA' => $name));
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $authorId = NULL;
+                
+                if (empty($rows)) {
+                    $stmtAuthor = $db->prepare('INSERT INTO authorsinfo(name, bio, portrait) VALUES (:name, :bio, :portrait);');
+                    $stmtAuthor->execute(array(':name' => "$name", ':bio' => "$bio", ':portrait' => "$portrait"));
+                    $authorId = $db->lastInsertId();
+                } else if (!empty($rows)) {
+                    foreach ($rows as $row) {
+                        $authorId = $row['id'];
+                    }
+                }
+                
+                $stmtBook = $db->prepare('INSERT INTO shelf(user_id, book_id, author_id) VALUES (:user, :book, :author);');
+                $stmtBook->execute(array(':user' => "$currentUser", ':book' => "$bookId", ':author' => "$authorId"));
+            } else {
+                echo "<br/>Please fill in all the fields!";
             }
             ?>
         </main>
