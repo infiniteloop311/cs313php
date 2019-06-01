@@ -39,17 +39,37 @@ $db = getDB();
         </header>
         <main>
             <form method="post" action="library_add.php">
-                <span>Enter Book Details</span><br/>
+                <h5>Enter Book Details</h5><br/>
                 <input type="text" name="title" placeholder="Enter Title"><br/><br/>
-                <textarea rows="5" cols="50" placeholder="Enter Description"></textarea><br/><br/>
+                <textarea rows="5" cols="50" name="description" placeholder="Enter Description"></textarea><br/><br/>
                 <input type="text" name="cover" placeholder="Enter Cover Filename"><br/><br/>
                 <input type="text" name="isbn" placeholder="Enter ISBN"><br/><br/>
-                <span>Enter Author Details</span><br/>
+                <h5>Enter Author Details</h5><br/>
                 <input type="text" name="name" placeholder="Enter Author's Name"><br/><br/>
-                <textarea rows="5" cols="50" placeholder="Enter Author Bio"></textarea>
+                <textarea rows="5" cols="50" placeholder="Enter Author Bio"></textarea><br/><br/>
                 <input type="text" name="portrait" placeholder="Enter Portrait Filename"><br/><br/>
                 <input type="submit" value="Add Book">
             </form>
+            <?php
+            if (!empty($_POST['title']) and 
+                !empty($_POST['description']) and 
+                !empty($_POST['cover']) and 
+                !empty($_POST['isbn']) and 
+                !empty($_POST['name']) and 
+                !empty($_POST['bio']) and 
+                !empty($_POST['portrait'])) {
+                $title = htmlspecialchars($_POST['title']);
+                $description = htmlspecialchars($_POST['description']);
+                $cover = htmlspecialchars($_POST['cover']);
+                $isbn = htmlspecialchars($_POST['isbn']);
+                $name = htmlspecialchars($_POST['name']);
+                $bio = htmlspecialchars($_POST['bio']);
+                $portrait = htmlspecialchars($_POST['portrait']);
+                echo "$title<br/>$description<br/>$cover<br/>$isbn<br/>$name<br/>$bio<br/>$portrait<br/>";
+                $currentUser = $_SESSION["userid"];
+                echo $currentUser;
+            }
+            ?>
         </main>
     </body>
 </html>
