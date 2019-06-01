@@ -70,7 +70,7 @@ $db = getDB();
                 
                 $stmtSearch = $db->prepare('SELECT a.id, a.name FROM authorsinfo AS a WHERE name=:nameA');
                 $stmtSearch->execute(array(':nameA' => $name));
-                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $rows = $stmtSearch->fetchAll(PDO::FETCH_ASSOC);
                 $authorId = NULL;
                 
                 if (empty($rows)) {
@@ -85,6 +85,10 @@ $db = getDB();
                 
                 $stmtBook = $db->prepare('INSERT INTO shelf(user_id, book_id, author_id) VALUES (:user, :book, :author);');
                 $stmtBook->execute(array(':user' => "$currentUser", ':book' => "$bookId", ':author' => "$authorId"));
+                
+                $new_page = "library_shelf.php";
+                header("Location: $new_page");
+                die();
             } else {
                 echo "<br/>Please fill in all the fields!";
             }
