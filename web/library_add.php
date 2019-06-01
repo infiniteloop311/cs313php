@@ -39,13 +39,13 @@ $db = getDB();
         <main>
             <form method="post" action="library_add.php">
                 <input type="text" name="title" placeholder="Enter Title"><br/>
-                <textarea rows="5" cols="50" placeholder="Enter Description"></textarea>
+                <textarea rows="5" cols="50" placeholder="Enter Description"></textarea><br/>
                 <input type="cover" name="cover" placeholder="Enter Filename for Cover"><br/>
                 <input type="isbn" name="isbn" placeholder="Enter ISBN"><br/>
                 <select>
                     <option value="other">Other</option>
-                </select>
-                <input type="submit" value="Add Book"><br/><br/>
+                </select><br/><br/>
+                <input type="submit" value="Add Book">
             </form>
         </main>
     </body>
