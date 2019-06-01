@@ -21,7 +21,7 @@ $db = getDB();
     <body>
         <header>
             <div class="col-6">
-                <h1>BookShelf</h1>
+                <h1>Add to Your BookShelf</h1>
             </div>
             <div class="col-6">
                 <h4>
@@ -37,7 +37,16 @@ $db = getDB();
             </div>
         </header>
         <main>
-            
+            <form method="post" action="library_add.php">
+                <input type="text" name="title" placeholder="Enter Title"><br/>
+                <textarea rows="5" cols="50" placeholder="Enter Description"></textarea>
+                <input type="cover" name="cover" placeholder="Enter Filename for Cover"><br/>
+                <input type="isbn" name="isbn" placeholder="Enter ISBN"><br/>
+                <select>
+                    <option value="other">Other</option>
+                </select>
+                <input type="submit" value="Add Book"><br/><br/>
+            </form>
         </main>
     </body>
 </html>

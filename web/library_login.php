@@ -6,9 +6,10 @@ $db = getDB();
 ?>
 
 <!--
-id | userlogin | passwordhash | firstname | lastname 
-----+-----------+--------------+-----------+----------
-  1 | testAdmin | password     | Test      | 313
+ id | userlogin  | passwordhash | firstname | lastname 
+----+------------+--------------+-----------+----------
+  1 | testAdmin  | password     | Test      | 313
+  6 | testAdmin2 | password     | Test2     | 313
 -->
 
 <!DOCTYPE html>
