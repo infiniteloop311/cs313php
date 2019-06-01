@@ -46,7 +46,7 @@ $db = getDB();
                 <input type="text" name="isbn" placeholder="Enter ISBN"><br/><br/>
                 <h5>Enter Author Details</h5><br/>
                 <input type="text" name="name" placeholder="Enter Author's Name"><br/><br/>
-                <textarea rows="5" cols="50" placeholder="Enter Author Bio"></textarea><br/><br/>
+                <textarea rows="5" cols="50" name="bio" placeholder="Enter Author Bio"></textarea><br/><br/>
                 <input type="text" name="portrait" placeholder="Enter Portrait Filename"><br/><br/>
                 <input type="submit" value="Add Book">
             </form>
