@@ -53,7 +53,7 @@ $db = getDB();
                     $stmt = $db->prepare('INSERT INTO users(userlogin, passwordhash, firstname, lastname) 
                                           VALUES (:user, :pass, :first, :last);');
                     $stmt->execute(array(':user' => "$username", ':pass' => "$password", ':first' => "$firstname", ':last' => "$lastname"));
-                    $newId = $stmt->lastInsertId('users_id_seq');
+                    $newId = $stmt->lastInsertId();
                     
                     $_SESSION["userid"] = $newId;
                     $_SESSION["user"] = $username;
