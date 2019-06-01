@@ -35,6 +35,7 @@ id | userlogin | passwordhash | firstname | lastname
                 <input type="password" name="pass" placeholder="Enter Password"><br/>
                 <input type="submit" value="Login"><br/>
             </form>
+            <a href="library_register.php">Don't Have an Account? Register Here.</a>
             <?php
             if (!empty($_POST['user']) and !empty($_POST['pass'])) {
                 $username = htmlspecialchars($_POST['user']);
@@ -47,7 +48,7 @@ id | userlogin | passwordhash | firstname | lastname
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 
                 if (empty($rows)) { 
-                    echo "Login Failed<br/>";
+                    echo "<br/>Login Failed<br/>";
                 } else if (!empty($rows)) {
                     foreach ($rows as $row) {
                         $id = $row['id'];

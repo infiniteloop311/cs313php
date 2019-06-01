@@ -8,7 +8,7 @@ $db = getDB();
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>My Shelf</title>
+        <title>Search My Shelf</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="library_styles.css">
         <!-- Latest compiled and minified CSS -->

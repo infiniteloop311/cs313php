@@ -8,7 +8,7 @@ $db = getDB();
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>My Shelf</title>
+        <title>Add to My Shelf</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="library_styles.css">
         <!-- Latest compiled and minified CSS -->
@@ -30,7 +30,6 @@ $db = getDB();
                         "<a href='library_logout.php'>Logout</a>";
                     ?>
                 </h4>
-                <a href="library_add.php">Add Book to Shelf</a>
             </div>
             <div class="col-12">
                 <a href="library_shelf.php">Home</a><br/>
@@ -38,24 +37,7 @@ $db = getDB();
             </div>
         </header>
         <main>
-            <?php
-            $id = $_SESSION["userid"];
-            foreach ($db->query("SELECT shelf.user_id, shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 
-                                FROM shelf
-                                INNER JOIN books ON shelf.book_id=books.id
-                                INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id
-                                WHERE user_id=$id") as $row)
-            {
-                $bookid = $row['book_id'];
-                $authorid = $row['author_id'];
-                $title = $row['title'];
-                $name = $row['name'];
-                $cover = $row['cover'];
-                echo "<div class=\"col-4\"><img src=\"$cover\" alt=$cover><br/>" . 
-                    "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
-                    "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a></div>";
-            }
-            ?>
+            
         </main>
     </body>
 </html>
