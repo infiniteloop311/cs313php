@@ -39,11 +39,23 @@ $db = getDB();
         </header>
         <main>
             <form method="post" action="library_add.php">
+                <span>Enter Book Details</span><br/>
                 <input type="text" name="title" placeholder="Enter Title"><br/><br/>
                 <textarea rows="5" cols="50" placeholder="Enter Description"></textarea><br/><br/>
-                <input type="text" name="cover" placeholder="Enter Filename for Cover"><br/><br/>
+                <input type="text" name="cover" placeholder="Enter Cover Filename"><br/><br/>
                 <input type="text" name="isbn" placeholder="Enter ISBN"><br/><br/>
-                <select>
+                <span>Enter Author Details</span><br/>
+                <select name="author">
+                    <?php
+                    $stmt = $db->prepare('SELECT authorsinfo.name
+                                          FROM authorsinfo');
+                    $stmt->execute();
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($rows as $row) {
+                        $authorname = $row['name'];
+                        echo "<option value=\"$authorname\">$authorname</option>";
+                    }
+                    ?>
                     <option value="other">Other</option>
                 </select><br/><br/><br/>
                 <input type="submit" value="Add Book">

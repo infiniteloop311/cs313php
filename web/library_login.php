@@ -30,7 +30,7 @@ $db = getDB();
             <h1>Welcome to your Personal Library</h1>
         </header>
         <main>
-            <h4>Login to Access your Book Shelf</h4>
+            <h4>Login to Access your Book Shelf</h4><br/>
             <form method="post" action="library_login.php">
                 <input type="text" name="user" placeholder="Enter Username"><br/><br/>
                 <input type="password" name="pass" placeholder="Enter Password"><br/><br/>
