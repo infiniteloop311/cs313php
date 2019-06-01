@@ -60,6 +60,10 @@ $db = getDB();
                     $_SESSION["pass"] = $password;
                     $_SESSION["first"] = $firstname;
                     $_SESSION["last"] = $lastname;
+                    
+                    $new_page = "library_shelf.php";
+                    header("Location: $new_page");
+                    die();
                 }
             }
             ?>
