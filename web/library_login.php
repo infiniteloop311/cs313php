@@ -29,11 +29,11 @@ id | userlogin | passwordhash | firstname | lastname
             <h1>Welcome to your Personal Library</h1>
         </header>
         <main>
-            <h3>Login to Access your Book Shelf</h3>
+            <h4>Login to Access your Book Shelf</h4>
             <form method="post" action="library_login.php">
                 <input type="text" name="user" placeholder="Enter Username"><br/>
                 <input type="password" name="pass" placeholder="Enter Password"><br/>
-                <input type="submit" value="Login"><br/>
+                <input type="submit" value="Login"><br/><br/>
             </form>
             <a href="library_register.php">Don't Have an Account? Register Here.</a>
             <?php
