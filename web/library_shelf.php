@@ -34,7 +34,7 @@ $db = getDB();
             </div>
             <div class="col-12">
                 <a href="library_shelf.php">Home</a>
-                <span> </span>
+                <span>      </span>
                 <a href="library_search.php">Search</a><br/><br/>
             </div>
         </header>
