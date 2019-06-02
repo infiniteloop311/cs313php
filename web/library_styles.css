@@ -34,7 +34,7 @@ input[type=text], input[type=password] {
 
 textarea {
     font-family: 'Raleway', sans-serif;
-    width: 99%;
+    width: 99.1%;
     border: 1px solid antiquewhite;
     border-radius: 5px;
     padding: 5px;
@@ -60,7 +60,7 @@ img {
 }
 
 .col-4 {
-    width: 31.2%;
+    width: 31.1%;
 }
 
 .col-6 {
@@ -68,7 +68,7 @@ img {
 }
 
 .col-12 {
-    width: 99%;
+    width: 98%;
 }
 
 @media only screen and (max-width: 500px) {
