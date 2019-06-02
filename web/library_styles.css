@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Raleway&display=swap');
 body {
     background-color: #5A3E2A;
     color: beige;
+}
+
+header {
+    font-family: 'Quicksand', sans-serif;
+}
+
+main {
+    font-family: 'Raleway', sans-serif;
 }
 
 a, a:visited {
