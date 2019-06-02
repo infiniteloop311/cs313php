@@ -15,15 +15,15 @@ img {
 }
 
 .col-4 {
-    width: 33.33%;
+    width: 33%;
 }
 
 .col-6 {
-    width: 50%;
+    width: 49%;
 }
 
 .col-12 {
-    width: 100%;
+    width: 99%;
 }
 
 @media only screen and (max-width: 500px) {
