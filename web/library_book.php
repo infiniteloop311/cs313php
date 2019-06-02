@@ -24,18 +24,20 @@ $db = getDB();
             <a href="library_shelf.php">Home</a><br/>
             <a href="library_search.php">Search</a><br/><br/>
         </header>
-        <?php
-        if (isset($_GET['book_id']))
-        {
-            $id = $_GET['book_id'];
-
-            foreach ($db->query("SELECT * FROM books WHERE id='$id'") as $row)
+        <main>
+            <?php
+            if (isset($_GET['book_id']))
             {
-                $cover = $row['cover'];
-                echo "<div><img src=\"$cover\" alt=$cover><br/>" . $row['title'] . 
-                    "<br/><br/>" . $row['description'] . "<br/><br/>" . $row['isbn'] . "</div>";
+                $id = $_GET['book_id'];
+
+                foreach ($db->query("SELECT * FROM books WHERE id='$id'") as $row)
+                {
+                    $cover = $row['cover'];
+                    echo "<div><img src=\"$cover\" alt=$cover><br/>" . $row['title'] . 
+                        "<br/><br/>" . $row['description'] . "<br/><br/>" . $row['isbn'] . "</div>";
+                }
             }
-        }
-        ?>
+            ?>
+        </main>
     </body>
 </html>
