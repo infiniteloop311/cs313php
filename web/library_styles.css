@@ -25,6 +25,7 @@ a:hover {
 }
 
 input[type=text], input[type=password] {
+    font-family: 'Raleway', sans-serif;
     width: 99%;
     border: 1px solid antiquewhite;
     border-radius: 5px;
@@ -32,6 +33,7 @@ input[type=text], input[type=password] {
 }
 
 textarea {
+    font-family: 'Raleway', sans-serif;
     width: 99%;
     border: 1px solid antiquewhite;
     border-radius: 5px;
@@ -39,6 +41,7 @@ textarea {
 }
 
 input[type=submit] {
+    font-family: 'Raleway', sans-serif;
     width: 100%;
     border: 1px solid antiquewhite;
     border-radius: 5px;
@@ -57,11 +60,11 @@ img {
 }
 
 .col-4 {
-    width: 31.4%;
+    width: 31.3%;
 }
 
 .col-6 {
-    width: 48%;
+    width: 47.7%;
 }
 
 .col-12 {
