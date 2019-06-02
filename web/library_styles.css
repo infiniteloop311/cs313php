@@ -11,6 +11,8 @@ header {
 main {
     background-color: beige;
     font-family: 'Raleway', sans-serif;
+    margin: 0px 50px;
+    padding: 20px;
     border-radius: 10px;
 }
 
@@ -34,7 +36,7 @@ img {
 }
 
 .col-4 {
-    width: 30%;
+    width: 32%;
 }
 
 .col-6 {
