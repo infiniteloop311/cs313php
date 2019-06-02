@@ -38,11 +38,9 @@ $db = getDB();
                 <a href="library_search.php">Search</a><br/><br/>
             </div>
         </header>
-        <!-- style="margin: 0px; border: 0px"-->
-        <main>
+        <main style="margin: 0px; border: 0px">
             <?php
             $id = $_SESSION["userid"];
-            echo "<div style=\"border: 1px solid antiquewhite\">";
             foreach ($db->query("SELECT shelf.user_id, shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 
                                 FROM shelf
                                 INNER JOIN books ON shelf.book_id=books.id
@@ -58,7 +56,6 @@ $db = getDB();
                     "<a href='library_book.php?book_id=$bookid'>$title</a>" . 
                     "<br/>by " . "<a href='library_author.php?author_id=$authorid'>$name</a></div>";
             }
-            echo "</div>";
             ?>
         </main>
     </body>
