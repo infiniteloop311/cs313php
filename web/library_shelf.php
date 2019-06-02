@@ -38,7 +38,7 @@ $db = getDB();
                 <a href="library_search.php">Search</a><br/><br/>
             </div>
         </header>
-        <main style="margin: 0px">
+        <main style="margin: 0px, border: none">
             <?php
             $id = $_SESSION["userid"];
             foreach ($db->query("SELECT shelf.user_id, shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 

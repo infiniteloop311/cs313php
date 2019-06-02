@@ -25,7 +25,7 @@ a:hover {
 }
 
 input[type=text], input[type=password] {
-    width: 98.8%;
+    width: 99%;
     border: 1px solid antiquewhite;
     border-radius: 5px;
     padding: 5px;
@@ -57,11 +57,11 @@ img {
 }
 
 .col-4 {
-    width: 31.5%;
+    width: 31.4%;
 }
 
 .col-6 {
-    width: 47.5%;
+    width: 48%;
 }
 
 .col-12 {
