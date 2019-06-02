@@ -21,9 +21,9 @@ $db = getDB();
     <body>
         <header>
             <h1>Registration</h1>
+            <h4>Fill out the form below to register</h4>
         </header>
         <main>
-            <h4>Fill out the form below to register</h4><br/>
             <form method="post" action="library_register.php">
                 <input type="text" name="first" placeholder="Enter Firstname"><br/><br/>
                 <input type="text" name="last" placeholder="Enter Lastname"><br/><br/>

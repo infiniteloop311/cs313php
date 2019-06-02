@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand|Raleway&display=swap');
 body {
     background-color: #5A3E2A;
-    color: beige;
+    color: antiquewhite;
 }
 
 header {
@@ -9,7 +9,7 @@ header {
 }
 
 main {
-    background-color: beige;
+    background-color: antiquewhite;
     font-family: 'Raleway', sans-serif;
     margin: 0px 50px;
     padding: 20px;
@@ -36,7 +36,7 @@ img {
 }
 
 .col-4 {
-    width: 32%;
+    width: 31%;
 }
 
 .col-6 {
