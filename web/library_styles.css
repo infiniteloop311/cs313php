@@ -40,7 +40,7 @@ textarea {
     padding: 5px;
 }
 
-input[type=submit] {
+input[type=submit], button {
     font-family: 'Raleway', sans-serif;
     width: 100%;
     border: 1px solid antiquewhite;
@@ -60,7 +60,7 @@ img {
 }
 
 .col-4 {
-    width: 31.3%;
+    width: 31.2%;
 }
 
 .col-6 {
