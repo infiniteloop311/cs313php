@@ -51,7 +51,7 @@ $db = getDB();
                 
                 if (empty($row)) { 
                     echo "<br/><br/>Login Failed<br/>";
-                } else if (!empty($rows)) {
+                } else if (!empty($row)) {
                     $id = $row['id'];
                     $user = $row['userlogin'];
                     $hashpass = $row['passwordhash'];
