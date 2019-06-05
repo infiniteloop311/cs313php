@@ -20,10 +20,10 @@ $db = getDB();
     </head>
     <body>
         <header>
-            <div class="col-6" style="text-align: left">
+            <div class="col-6">
                 <h1>Author Info</h1>
             </div>
-            <div class="col-6" style="text-align: right">
+            <div class="col-6">
                 <h4>
                     <?php
                     echo "Welcome, " . $_SESSION["first"] . " " . $_SESSION["last"] . " " . 
@@ -33,7 +33,7 @@ $db = getDB();
                 <a href="library_add.php">Add Book to Shelf</a>
             </div>
             <div class="col-12">
-                <a href="library_shelf.php">Home</a><br/>
+                <a href="library_shelf.php">Home</a>
                 <a href="library_search.php">Search</a><br/><br/>
             </div>
         </header>

@@ -33,12 +33,12 @@ $db = getDB();
                 <a href="library_add.php">Add Book to Shelf</a>
             </div>
             <div class="col-12">
-                <a href="library_shelf.php">Home</a><br/>
+                <a href="library_shelf.php">Home</a>
                 <a href="library_search.php">Search</a><br/><br/>
             </div>
         </header>
         <form method="post" action="library_search.php">
-            <input type="text" name="searchbar" placeholder="Search by Title or Author">
+            <input type="text" name="searchbar" placeholder="Search by Title or Author"><br/>
             <button>Search</button>
         </form>
         <?php
