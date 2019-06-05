@@ -40,7 +40,14 @@ $db = getDB();
         </header>
         <main style="margin: 0px; border: 0px">
             <?php
-            $id = $_SESSION["userid"];
+            if (isset($_SESSION['user'])) {
+                $id = $_SESSION["userid"];
+                $username = $_SESSION['user'];
+            } else {
+                header("Location: library_login.php");
+                die();
+            }
+            
             foreach ($db->query("SELECT shelf.user_id, shelf.book_id, shelf.author_id, books.cover, books.title, authorsinfo.name 
                                 FROM shelf
                                 INNER JOIN books ON shelf.book_id=books.id

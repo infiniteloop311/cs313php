@@ -20,15 +20,36 @@ $db = getDB();
     </head>
     <body>
         <header>
-            <h1>BookShelf</h1>
-            <a href="library_shelf.php">Home</a><br/><br/>
-            <a href="library_search.php">Search</a><br/><br/>
+            <div class="col-6" style="text-align: left">
+                <h1>Search by Book or by Author</h1>
+            </div>
+            <div class="col-6" style="text-align: right">
+                <h4>
+                    <?php
+                    echo "Welcome, " . $_SESSION["first"] . " " . $_SESSION["last"] . " " . 
+                        "<a href='library_logout.php'>Logout</a>";
+                    ?>
+                </h4>
+                <a href="library_add.php">Add Book to Shelf</a>
+            </div>
+            <div class="col-12">
+                <a href="library_shelf.php">Home</a><br/>
+                <a href="library_search.php">Search</a><br/><br/>
+            </div>
         </header>
         <form method="post" action="library_search.php">
             <input type="text" name="searchbar" placeholder="Search by Title or Author">
             <button>Search</button>
         </form>
-        <?php	
+        <?php
+        if (isset($_SESSION['user'])) {
+            $id = $_SESSION["userid"];
+            $username = $_SESSION['user'];
+        } else {
+            header("Location: library_login.php");
+            die();
+        }
+        
         if (isset($_POST['searchbar'])) {
             $searchstring = htmlspecialchars($_POST['searchbar']);
             echo "<br/><br/>";

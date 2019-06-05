@@ -51,6 +51,14 @@ $db = getDB();
                 <input type="submit" value="Add Book">
             </form>
             <?php
+            if (isset($_SESSION['user'])) {
+                $id = $_SESSION["userid"];
+                $username = $_SESSION['user'];
+            } else {
+                header("Location: library_login.php");
+                die();
+            }
+            
             if (!empty($_POST['title']) and !empty($_POST['description']) and !empty($_POST['cover']) and !empty($_POST['isbn']) and 
                 !empty($_POST['name']) and !empty($_POST['bio']) and !empty($_POST['portrait'])) {
                 $title = htmlspecialchars($_POST['title']);

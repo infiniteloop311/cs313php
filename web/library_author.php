@@ -20,12 +20,33 @@ $db = getDB();
     </head>
     <body>
         <header>
-            <h1>BookShelf</h1>
-            <a href="library_shelf.php">Home</a><br/>
-            <a href="library_search.php">Search</a><br/><br/>
+            <div class="col-6" style="text-align: left">
+                <h1>Author Info</h1>
+            </div>
+            <div class="col-6" style="text-align: right">
+                <h4>
+                    <?php
+                    echo "Welcome, " . $_SESSION["first"] . " " . $_SESSION["last"] . " " . 
+                        "<a href='library_logout.php'>Logout</a>";
+                    ?>
+                </h4>
+                <a href="library_add.php">Add Book to Shelf</a>
+            </div>
+            <div class="col-12">
+                <a href="library_shelf.php">Home</a><br/>
+                <a href="library_search.php">Search</a><br/><br/>
+            </div>
         </header>
         <main>
             <?php
+            if (isset($_SESSION['user'])) {
+                $id = $_SESSION["userid"];
+                $username = $_SESSION['user'];
+            } else {
+                header("Location: library_login.php");
+                die();
+            }
+            
             if (isset($_GET['author_id']))
             {
                 $id = $_GET['author_id'];
