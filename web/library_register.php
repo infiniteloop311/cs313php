@@ -38,7 +38,8 @@ $db = getDB();
                 !empty($_POST['first']) and 
                 !empty($_POST['last'])) {
                 $username = htmlspecialchars($_POST['user']);
-                $password = htmlspecialchars($_POST['pass']);
+                //$password = htmlspecialchars($_POST['pass']);
+                $password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
                 $firstname = htmlspecialchars($_POST['first']);
                 $lastname = htmlspecialchars($_POST['last']);
                 
@@ -58,7 +59,6 @@ $db = getDB();
                     
                     $_SESSION["userid"] = $newId;
                     $_SESSION["user"] = $username;
-                    $_SESSION["pass"] = $password;
                     $_SESSION["first"] = $firstname;
                     $_SESSION["last"] = $lastname;
                     

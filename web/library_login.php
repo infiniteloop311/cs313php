@@ -45,25 +45,26 @@ $db = getDB();
                 
                 $stmt = $db->prepare('SELECT u.id, u.userlogin, u.passwordhash, u.firstname, u.lastname
                                       FROM users as u
-                                      WHERE userlogin=:username AND passwordhash=:password');
-                $stmt->execute(array(':username' => "$username", ':password' => "$password"));
-                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                      WHERE userlogin=:username');
+                $stmt->execute(array(':username' => "$username"));
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 
-                if (empty($rows)) { 
+                if (empty($row)) { 
                     echo "<br/><br/>Login Failed<br/>";
                 } else if (!empty($rows)) {
-                    foreach ($rows as $row) {
-                        $id = $row['id'];
-                        $user = $row['userlogin'];
-                        $pass = $row['passwordhash'];
-                        $firstname = $row['firstname'];
-                        $lastname = $row['lastname'];
+                    $id = $row['id'];
+                    $user = $row['userlogin'];
+                    $hashpass = $row['passwordhash'];
+                    $firstname = $row['firstname'];
+                    $lastname = $row['lastname'];
+                    
+                    if (password_verify($password, $hashpass)) {
                         $_SESSION["userid"] = $id;
                         $_SESSION["user"] = $user;
-                        $_SESSION["pass"] = $pass;
                         $_SESSION["first"] = $firstname;
                         $_SESSION["last"] = $lastname;
                     }
+                    
                     $new_page = "library_shelf.php";
                     header("Location: $new_page");
                     die();

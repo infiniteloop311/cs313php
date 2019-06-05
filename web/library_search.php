@@ -20,10 +20,10 @@ $db = getDB();
     </head>
     <body>
         <header>
-            <div class="col-6" style="text-align: left">
+            <div class="col-6">
                 <h1>Search by Book or by Author</h1>
             </div>
-            <div class="col-6" style="text-align: right">
+            <div class="col-6">
                 <h4>
                     <?php
                     echo "Welcome, " . $_SESSION["first"] . " " . $_SESSION["last"] . " " . 
@@ -38,7 +38,7 @@ $db = getDB();
             </div>
         </header>
         <form method="post" action="library_search.php">
-            <input type="text" name="searchbar" placeholder="Search by Title or Author"><br/>
+            <input type="text" name="searchbar" placeholder="Search by Title or Author"><br/><br/>
             <button>Search</button>
         </form>
         <?php

@@ -20,10 +20,10 @@ $db = getDB();
     </head>
     <body>
         <header>
-            <div class="col-6" style="text-align: left">
+            <div class="col-6">
                 <h1>BookShelf</h1>
             </div>
-            <div class="col-6" style="text-align: right">
+            <div class="col-6">
                 <h4>
                     <?php
                     echo "Welcome, " . $_SESSION["first"] . " " . $_SESSION["last"] . " " . 
