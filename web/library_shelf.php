@@ -52,7 +52,7 @@ $db = getDB();
                                 FROM shelf
                                 INNER JOIN books ON shelf.book_id=books.id
                                 INNER JOIN authorsinfo ON shelf.author_id=authorsinfo.id
-                                WHERE user_id=$id") as $row)
+                                WHERE user_id=$userid") as $row)
             {
                 $bookid = $row['book_id'];
                 $authorid = $row['author_id'];
