@@ -93,7 +93,7 @@ $db = getDB();
             if (!empty($_POST['isbn'])) {
                 $isbn = htmlspecialchars($_POST['isbn']));
                 
-                $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE title=:id');
+                $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE id=:id');
                 $stmtBook->execute(array(':isbn' => "$isbn", ':id' => "$id"));
                 
                 header("Location: library_book.php?book_id=$id");
