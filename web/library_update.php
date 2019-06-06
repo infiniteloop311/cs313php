@@ -79,7 +79,7 @@ $db = getDB();
                 header("Location: library_shelf.php");
                 die();
             }
-            /*
+            
             // UPDATE queries for the book form
             if (!empty($_POST['title'])) {
                 
@@ -90,6 +90,7 @@ $db = getDB();
             if (!empty($_POST['cover'])) {
                 
             }
+            /*
             if (!empty($_POST['isbn'])) {
                 $isbn = htmlspecialchars($_POST['isbn']));
                 
