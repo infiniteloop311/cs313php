@@ -51,12 +51,14 @@ $db = getDB();
                 <textarea rows="5" cols="50" name="description" placeholder="Enter Description"></textarea><br/><br/>
                 <input type="text" name="cover" placeholder="Enter Cover Filename"><br/><br/>
                 <input type="text" name="isbn" placeholder="Enter ISBN"><br/><br/>
+                <input type="submit" value="Update Book Info">
             </form>
             
             <form id="author_update" name="author_update" method="post" action="library_update.php" style="display: none">
                 <input type="text" name="name" placeholder="Enter Author's Name"><br/><br/>
                 <textarea rows="5" cols="50" name="bio" placeholder="Enter Author Bio"></textarea><br/><br/>
                 <input type="text" name="portrait" placeholder="Enter Portrait Filename"><br/><br/>
+                <input type="submit" value="Update Author Info">
             </form>
             <?php
             if (isset($_SESSION['user'])) {
@@ -68,10 +70,8 @@ $db = getDB();
             }
 
             if (isset($_GET['updatebook'])) {
-                echo "You're updating a book!";
                 echo "<script> bookFormReveal(); </script>";
             } else if (isset($_GET['updateauthor'])) {
-                echo "You're updating an author!";
                 echo "<script> authorFormReveal(); </script>";
             } else {
                 header("Location: library_shelf.php");
