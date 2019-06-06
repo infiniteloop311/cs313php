@@ -19,7 +19,7 @@ $db = getDB();
         <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
         <script>
             function bookFormReveal() {
-                document.forms["book"].style.display = "block";
+                document.forms["book_update"].style.display = "block";
             }
             function authorFormReveal() {
                 document.getElementById('author').style.display = "block";
