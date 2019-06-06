@@ -71,6 +71,7 @@ $db = getDB();
             
             if (isset($_GET['updatebook'])) {
                 $id = htmlspecialchars($_GET['updatebook']);
+                $id = (integer)$id;
                 echo "<script> bookFormReveal(); </script>";
             } else if (isset($_GET['updateauthor'])) {
                 $id = htmlspecialchars($_GET['authorbook']);
@@ -96,7 +97,7 @@ $db = getDB();
                 $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE id=:id');
                 $stmtBook->execute(array(':isbn' => $isbn, ':id' => $id));
                 
-                //header("Location: library_book.php?book_id=$id");
+                //header("Location: library_shelf.php");
                 //die();
             }
             
