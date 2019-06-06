@@ -57,7 +57,7 @@ $db = getDB();
                     echo "<img src=\"$portrait\" alt=$portrait><br/>" . $row['name'] . 
                         "<br/><br/>" . $row['bio'];
                 }
-                echo "<a href=\"library_update.php?updateauthor=$id\">Update Author Info</a>";
+                echo "<br/><br/><a href=\"library_update.php?updateauthor=$id\">Update Author Info</a>";
             }
             ?>
         </main>
