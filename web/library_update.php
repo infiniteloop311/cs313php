@@ -19,7 +19,7 @@ $db = getDB();
         <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
         <script>
             function bookFormReveal() {
-                document.forms['book_update'].style.display = "block";
+                document.forms[0].style.display = "block";
             }
             function authorFormReveal() {
                 document.getElementById('author').style.display = "block";
@@ -66,14 +66,14 @@ $db = getDB();
                 die();
             }
             ?>
-            <form id="book" name="book_update" method="post" action="library_update.php" style="display: none">
+            <form id="book_update" name="book_update" method="post" action="library_update.php" style="display: none">
                 <input type="text" name="title" placeholder="Enter Title"><br/><br/>
                 <textarea rows="5" cols="50" name="description" placeholder="Enter Description"></textarea><br/><br/>
                 <input type="text" name="cover" placeholder="Enter Cover Filename"><br/><br/>
                 <input type="text" name="isbn" placeholder="Enter ISBN"><br/><br/>
             </form>
             
-            <form id="author" name="author_update" method="post" action="library_update.php" style="display: none">
+            <form id="author_update" name="author_update" method="post" action="library_update.php" style="display: none">
                 <input type="text" name="name" placeholder="Enter Author's Name"><br/><br/>
                 <textarea rows="5" cols="50" name="bio" placeholder="Enter Author Bio"></textarea><br/><br/>
                 <input type="text" name="portrait" placeholder="Enter Portrait Filename"><br/><br/>
