@@ -96,8 +96,8 @@ $db = getDB();
                 $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE id=:id');
                 $stmtBook->execute(array(':isbn' => $isbn, ':id' => $id));
                 
-                header("Location: library_book.php?book_id=$id");
-                die();
+                //header("Location: library_book.php?book_id=$id");
+                //die();
             }
             
             // UPDATE queries for the author form
