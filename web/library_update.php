@@ -71,7 +71,7 @@ $db = getDB();
             
             if (isset($_GET['updatebook'])) {
                 $id = htmlspecialchars($_GET['updatebook']);
-                $id = (integer)$id;
+                $id = (integer) $id;
                 echo "<script> bookFormReveal(); </script>";
             } else if (isset($_GET['updateauthor'])) {
                 $id = htmlspecialchars($_GET['authorbook']);
@@ -93,6 +93,7 @@ $db = getDB();
             }
             if (!empty($_POST['isbn'])) {
                 $isbn = htmlspecialchars($_POST['isbn']);
+                $isbn = (integer) $isbn;
                 
                 $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE id=:id');
                 $stmtBook->execute(array(':isbn' => $isbn, ':id' => $id));
