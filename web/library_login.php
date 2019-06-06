@@ -50,6 +50,7 @@ $db = getDB();
                 $stmt->execute(array(':username' => "$username"));
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 
+                //
                 if (empty($row)) { 
                     echo "<br/><br/>Login Failed<br/>";
                 } else if (!empty($row)) {
@@ -64,11 +65,13 @@ $db = getDB();
                         $_SESSION["user"] = $user;
                         $_SESSION["first"] = $firstname;
                         $_SESSION["last"] = $lastname;
+                        
+                        $new_page = "library_shelf.php";
+                        header("Location: $new_page");
+                        die();
                     }
-                    
-                    $new_page = "library_shelf.php";
-                    header("Location: $new_page");
-                    die();
+                } else {
+                    echo "<br/><br/>Login Failed<br/>";
                 }
             }
             ?>
