@@ -79,7 +79,7 @@ $db = getDB();
                 header("Location: library_shelf.php");
                 die();
             }
-            
+            /*
             // UPDATE queries for the book form
             if (!empty($_POST['title'])) {
                 
@@ -110,6 +110,7 @@ $db = getDB();
             if (!empty($_POST['portrait'])) {
                 
             }
+            */
             ?>
         </main>
     </body>
