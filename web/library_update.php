@@ -68,17 +68,6 @@ $db = getDB();
                 header("Location: library_login.php");
                 die();
             }
-
-            if (isset($_GET['updatebook'])) {
-                $id = htmlspecialchars($_GET['updatebook']);
-                echo "<script> bookFormReveal(); </script>";
-            } else if (isset($_GET['updateauthor'])) {
-                $id = htmlspecialchars($_GET['authorbook']);
-                echo "<script> authorFormReveal(); </script>";
-            } else {
-                header("Location: library_shelf.php");
-                die();
-            }
             
             // UPDATE queries for the book form
             if (!empty($_POST['title'])) {
@@ -109,6 +98,17 @@ $db = getDB();
             }
             if (!empty($_POST['portrait'])) {
                 
+            }
+            
+            if (isset($_GET['updatebook'])) {
+                $id = htmlspecialchars($_GET['updatebook']);
+                echo "<script> bookFormReveal(); </script>";
+            } else if (isset($_GET['updateauthor'])) {
+                $id = htmlspecialchars($_GET['authorbook']);
+                echo "<script> authorFormReveal(); </script>";
+            } else {
+                header("Location: library_shelf.php");
+                die();
             }
             ?>
         </main>
