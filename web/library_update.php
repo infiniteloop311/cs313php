@@ -99,7 +99,7 @@ $db = getDB();
                 header("Location: library_book.php?book_id=$id");
                 die();
             }
-            
+            */
             // UPDATE queries for the author form
             if (!empty($_POST['name'])) {
                 
@@ -110,7 +110,6 @@ $db = getDB();
             if (!empty($_POST['portrait'])) {
                 
             }
-            */
             ?>
         </main>
     </body>
