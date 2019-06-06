@@ -77,40 +77,35 @@ $db = getDB();
                 $id = htmlspecialchars($_GET['authorbook']);
                 echo "<script> authorFormReveal(); </script>";
             } else {
-                //header("Location: library_shelf.php");
-                //die();
-            }
-            
-            // UPDATE queries for the book form
-            if (!empty($_POST['title'])) {
-                
-            }
-            if (!empty($_POST['description'])) {
-                
-            }
-            if (!empty($_POST['cover'])) {
-                
-            }
-            if (!empty($_POST['isbn'])) {
-                $isbn = htmlspecialchars($_POST['isbn']);
-                $isbn = (integer) $isbn;
-                
-                $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE id=:id');
-                $stmtBook->execute(array(':isbn' => $isbn, ':id' => $id));
-                
-                //header("Location: library_shelf.php");
-                //die();
-            }
-            
-            // UPDATE queries for the author form
-            if (!empty($_POST['name'])) {
-                
-            }
-            if (!empty($_POST['bio'])) {
-                
-            }
-            if (!empty($_POST['portrait'])) {
-                
+                // UPDATE queries for the book form
+                if (!empty($_POST['title'])) {
+                    
+                }
+                if (!empty($_POST['description'])) {
+                    
+                }
+                if (!empty($_POST['cover'])) {
+                    
+                }
+                if (!empty($_POST['isbn'])) {
+                    $isbn = htmlspecialchars($_POST['isbn']);
+                    
+                    $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE id=:id');
+                    $stmtBook->execute(array(':isbn' => '$isbn', ':id' => $id));
+                }
+
+                // UPDATE queries for the author form
+                if (!empty($_POST['name'])) {
+                    
+                }
+                if (!empty($_POST['bio'])) {
+                    
+                }
+                if (!empty($_POST['portrait'])) {
+                    
+                }
+                header("Location: library_shelf.php");
+                die();
             }
             ?>
         </main>
