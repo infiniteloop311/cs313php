@@ -10,12 +10,13 @@ $db = getDB();
 ----+------------+--------------+-----------+----------
   1 | testAdmin  | password     | Test      | 313
   6 | testAdmin2 | password     | Test2     | 313
+  7 | testAdmin3 | password     | Test3     | 313
 -->
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>My Shelf</title>
+        <title>Login to My Shelf</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="library_styles.css">
         <!-- Latest compiled and minified CSS -->

@@ -8,7 +8,7 @@ $db = getDB();
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Author Bio</title>
+        <title>Update Info</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="library_styles.css">
         <!-- Latest compiled and minified CSS -->
@@ -21,7 +21,7 @@ $db = getDB();
     <body>
         <header>
             <div class="col-6">
-                <h1>Author Info</h1>
+                <h1>Update Info</h1>
             </div>
             <div class="col-6">
                 <h4>
@@ -47,17 +47,14 @@ $db = getDB();
                 die();
             }
             
-            if (isset($_GET['author_id']))
-            {
-                $id = $_GET['author_id'];
-
-                foreach ($db->query("SELECT * FROM authorsinfo WHERE id='$id'") as $row)
-                {
-                    $portrait = $row['portrait'];
-                    echo "<img src=\"$portrait\" alt=$portrait><br/>" . $row['name'] . 
-                        "<br/><br/>" . $row['bio'];
-                }
-                echo "<a href=\"library_update.php?updateauthor=$id\">Update Author Info</a>";
+            if (isset($_GET['updatebook'])) {
+                echo "You're updating a book!";
+                
+            } else if (isset($_GET['updateauthor'])) {
+                echo "You're updating an author!";
+            } else {
+                header("Location: library_shelf.php");
+                die();
             }
             ?>
         </main>
