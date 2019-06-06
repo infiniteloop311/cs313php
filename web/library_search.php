@@ -43,7 +43,7 @@ $db = getDB();
         </form>
         <?php
         if (isset($_SESSION['user'])) {
-            $id = $_SESSION["userid"];
+            $userid = $_SESSION["userid"];
             $username = $_SESSION['user'];
         } else {
             header("Location: library_login.php");

@@ -62,7 +62,7 @@ $db = getDB();
             </form>
             <?php
             if (isset($_SESSION['user'])) {
-                $id = $_SESSION["userid"];
+                $userid = $_SESSION["userid"];
                 $username = $_SESSION['user'];
             } else {
                 header("Location: library_login.php");
@@ -70,12 +70,45 @@ $db = getDB();
             }
 
             if (isset($_GET['updatebook'])) {
+                $id = htmlspecialchars($_GET['updatebook']);
                 echo "<script> bookFormReveal(); </script>";
             } else if (isset($_GET['updateauthor'])) {
+                $id = htmlspecialchars($_GET['authorbook']);
                 echo "<script> authorFormReveal(); </script>";
             } else {
                 header("Location: library_shelf.php");
                 die();
+            }
+            
+            // UPDATE queries for the book form
+            if (!empty($_POST['title'])) {
+                
+            }
+            if (!empty($_POST['description'])) {
+                
+            }
+            if (!empty($_POST['cover'])) {
+                
+            }
+            if (!empty($_POST['isbn'])) {
+                $isbn = htmlspecialchars($_POST['isbn']));
+                
+                $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE title=:id');
+                $stmtBook->execute(array(':isbn' => "$isbn", ':id' => "$id"));
+                
+                header("Location: library_book.php?book_id=$id");
+                die();
+            }
+            
+            // UPDATE queries for the author form
+            if (!empty($_POST['name'])) {
+                
+            }
+            if (!empty($_POST['bio'])) {
+                
+            }
+            if (!empty($_POST['portrait'])) {
+                
             }
             ?>
         </main>
