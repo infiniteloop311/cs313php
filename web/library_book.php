@@ -51,7 +51,7 @@ $db = getDB();
             {
                 $id = $_GET['book_id'];
 
-                foreach ($db->query("SELECT * FROM books WHERE id='$id'") as $row)
+                foreach ($db->query("SELECT * FROM books WHERE id=$id") as $row)
                 {
                     $cover = $row['cover'];
                     echo "<div><img src=\"$cover\" alt=$cover><br/>" . $row['title'] . 
