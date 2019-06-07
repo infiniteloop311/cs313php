@@ -79,11 +79,10 @@ $db = getDB();
                 // UPDATE queries for the book form
                 if (!empty($_POST['title'])) {
                     $title = $_POST['title'];
-                    //$stmtBook = $db->prepare('UPDATE books SET title=:title WHERE id=:id');
-                    //$stmtBook->bindValue(':title', $title, PDO::PARAM_STR);
-                    //$stmtBook->bindValue(':id', $bookid, PDO::PARAM_INT);
-                    //$stmtBook->execute();
-                }
+                    $stmtBook = $db->prepare('UPDATE books SET title=:title WHERE id=:id');
+                    $stmtBook->bindValue(':title', $title, PDO::PARAM_STR);
+                    $stmtBook->bindValue(':id', $bookid, PDO::PARAM_INT);
+                    $stmtBook->execute();
                 }
                 if (!empty($_POST['description'])) {
                     
