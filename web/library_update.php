@@ -74,14 +74,13 @@ $db = getDB();
                 $_SESSION['updateid'] = $bookid;
                 echo "<script> bookFormReveal(); </script>";
             } else if (isset($_GET['updateauthor'])) {
-                $authorid = htmlspecialchars($_GET['authorbook']);
+                $authorid = htmlspecialchars($_GET['updateauthor']);
                 $_SESSION['updateid'] = $authorid;
                 echo "<script> authorFormReveal(); </script>";
             } else {
                 $bookid = $_SESSION['updateid'];
                 $authorid = $_SESSION['updateid'];
                 // UPDATE queries for the book form
-                //!!!!!! Undefined variable bookid, maybe my file doesn't recognize the bookid 
                 if (!empty($_POST['title'])) {
                     $title = htmlspecialchars($_POST['title']);
                     $stmtBook = $db->prepare('UPDATE books SET title=:title WHERE id=:id');
