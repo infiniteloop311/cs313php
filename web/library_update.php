@@ -77,6 +77,7 @@ $db = getDB();
                 $id = htmlspecialchars($_GET['authorbook']);
                 echo "<script> authorFormReveal(); </script>";
             } else {
+                echo "Got into the third else statement";
                 // UPDATE queries for the book form
                 if (!empty($_POST['title'])) {
                     
@@ -106,8 +107,8 @@ $db = getDB();
                 if (!empty($_POST['portrait'])) {
                     
                 }
-                header("Location: library_shelf.php");
-                die();
+                //header("Location: library_shelf.php");
+                //die();
             }
             ?>
         </main>
