@@ -78,22 +78,29 @@ $db = getDB();
             } else {
                 // UPDATE queries for the book form
                 if (!empty($_POST['title'])) {
-                    $title = $_POST['title'];
-                    $stmtBook = $db->prepare('UPDATE books SET title=:title WHERE id=:id');
+                    $title = htmlspecialchars($_POST['title']);
+                    $stmtBook = $db->prepare('UPDATE books SET title=:title WHERE id=:bookid');
                     $stmtBook->bindValue(':title', $title, PDO::PARAM_STR);
                     $stmtBook->bindValue(':id', $bookid, PDO::PARAM_INT);
                     $stmtBook->execute();
                 }
                 if (!empty($_POST['description'])) {
-                    
+                    $des = htmlspecialchars($_POST['description']);
+                    $stmtBook = $db->prepare('UPDATE books SET description=:des WHERE id=:bookid');
+                    $stmtBook->bindValue(':des', $des, PDO::PARAM_STR);
+                    $stmtBook->bindValue(':id', $bookid, PDO::PARAM_INT);
+                    $stmtBook->execute();
                 }
                 if (!empty($_POST['cover'])) {
-                    
+                    $cover = htmlspecialchars($_POST['cover']);
+                    $stmtBook = $db->prepare('UPDATE books SET cover=:cover WHERE id=:bookid');
+                    $stmtBook->bindValue(':cover', $cover, PDO::PARAM_STR);
+                    $stmtBook->bindValue(':id', $bookid, PDO::PARAM_INT);
+                    $stmtBook->execute();
                 }
                 if (!empty($_POST['isbn'])) {
                     $isbn = htmlspecialchars($_POST['isbn']);
-                    
-                    $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE id=:id');
+                    $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE id=:bookid');
                     $stmtBook->bindValue(':isbn', $isbn, PDO::PARAM_INT);
                     $stmtBook->bindValue(':id', $bookid, PDO::PARAM_INT);
                     $stmtBook->execute();
@@ -101,13 +108,25 @@ $db = getDB();
 
                 // UPDATE queries for the author form
                 if (!empty($_POST['name'])) {
-                    
+                    $name = htmlspecialchars($_POST['name']);
+                    $stmtBook = $db->prepare('UPDATE authorsinfo SET name=:name WHERE id=:authorid');
+                    $stmtBook->bindValue(':name', $name, PDO::PARAM_STR);
+                    $stmtBook->bindValue(':id', $authorid, PDO::PARAM_INT);
+                    $stmtBook->execute();
                 }
                 if (!empty($_POST['bio'])) {
-                    
+                    $bio = htmlspecialchars($_POST['bio']);
+                    $stmtBook = $db->prepare('UPDATE authorsinfo SET bio=:bio WHERE id=:authorid');
+                    $stmtBook->bindValue(':bio', $bio, PDO::PARAM_STR);
+                    $stmtBook->bindValue(':id', $authorid, PDO::PARAM_INT);
+                    $stmtBook->execute();
                 }
                 if (!empty($_POST['portrait'])) {
-                    
+                    $portrait = htmlspecialchars($_POST['portrait']);
+                    $stmtBook = $db->prepare('UPDATE authorsinfo SET portrait=:portrait WHERE id=:authorid');
+                    $stmtBook->bindValue(':portrait', $portrait, PDO::PARAM_STR);
+                    $stmtBook->bindValue(':id', $authorid, PDO::PARAM_INT);
+                    $stmtBook->execute();
                 }
                 //header("Location: library_shelf.php");
                 //die();
