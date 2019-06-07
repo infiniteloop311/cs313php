@@ -77,7 +77,6 @@ $db = getDB();
                 $id = htmlspecialchars($_GET['authorbook']);
                 echo "<script> authorFormReveal(); </script>";
             } else {
-                echo "Got into the third else statement";
                 // UPDATE queries for the book form
                 if (!empty($_POST['title'])) {
                     
@@ -89,6 +88,7 @@ $db = getDB();
                     
                 }
                 if (!empty($_POST['isbn'])) {
+                    echo "Got into the third else statement";
                     $isbn = htmlspecialchars($_POST['isbn']);
                     
                     $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE id=:id');
