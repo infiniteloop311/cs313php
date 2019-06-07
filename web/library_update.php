@@ -71,7 +71,6 @@ $db = getDB();
             
             if (isset($_GET['updatebook'])) {
                 $id = htmlspecialchars($_GET['updatebook']);
-                $id = (integer) $id;
                 echo "<script> bookFormReveal(); </script>";
             } else if (isset($_GET['updateauthor'])) {
                 $id = htmlspecialchars($_GET['authorbook']);
