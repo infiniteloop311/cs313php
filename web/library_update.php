@@ -70,15 +70,20 @@ $db = getDB();
             }
             
             if (isset($_GET['updatebook'])) {
-                $id = htmlspecialchars($_GET['updatebook']);
+                $bookid = htmlspecialchars($_GET['updatebook']);
                 echo "<script> bookFormReveal(); </script>";
             } else if (isset($_GET['updateauthor'])) {
-                $id = htmlspecialchars($_GET['authorbook']);
+                $authorid = htmlspecialchars($_GET['authorbook']);
                 echo "<script> authorFormReveal(); </script>";
             } else {
                 // UPDATE queries for the book form
                 if (!empty($_POST['title'])) {
-                    
+                    $title = $_POST['title'];
+                    $stmtBook = $db->prepare('UPDATE books SET title=:title WHERE id=:id');
+                    $stmtBook->bindValue(':title', $title, PDO::PARAM_STR);
+                    $stmtBook->bindValue(':id', $bookid, PDO::PARAM_INT);
+                    $stmtBook->execute();
+                }
                 }
                 if (!empty($_POST['description'])) {
                     
@@ -87,12 +92,11 @@ $db = getDB();
                     
                 }
                 if (!empty($_POST['isbn'])) {
-                    echo "Got into the third else statement";
                     $isbn = htmlspecialchars($_POST['isbn']);
                     
                     $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE id=:id');
                     $stmtBook->bindValue(':isbn', $isbn, PDO::PARAM_INT);
-                    $stmtBook->bindValue(':id', $id, PDO::PARAM_INT);
+                    $stmtBook->bindValue(':id', $bookid, PDO::PARAM_INT);
                     $stmtBook->execute();
                 }
 
