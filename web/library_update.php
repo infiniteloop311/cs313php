@@ -91,7 +91,9 @@ $db = getDB();
                     $isbn = htmlspecialchars($_POST['isbn']);
                     
                     $stmtBook = $db->prepare('UPDATE books SET isbn=:isbn WHERE id=:id');
-                    $stmtBook->execute(array(':isbn' => $isbn, ':id' => $id));
+                    $stmtBook->bindValue(':isbn', $isbn, PDO::PARAM_INT);
+                    $stmtBook->bindValue(':id', $id, PDO::PARAM_INT);
+                    $stmtBook->execute();
                 }
 
                 // UPDATE queries for the author form
